@@ -16,10 +16,10 @@ elif [[ "$OS" = 'macos' ]]; then
 	brew install stow
 fi
 
-git clone https://gitlab.com/Abdullah/cfg.git ~/cfg
-cd ~/cfg || exit
+git clone https://gitlab.com/mfyz/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles || exit
 
-for d in $(ls -d */ | cut -f1 -d '/');
+for d in $(ls -d */ | cut -f1 -d '/' | grep -v '^_');
 do
 	( stow "$d"  )
 done
