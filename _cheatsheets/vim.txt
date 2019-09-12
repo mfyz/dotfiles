@@ -1,0 +1,43 @@
+
+  # General
+    :source ~/.vimrc   Reloads vimrc file
+
+
+  # Navigating in VIM UI
+    C-w + arrow        Move between splits
+    :bn                Move to next tab in vim-airline tab bar
+    :bp                Move to previous tab in vim-airline tab bar
+    :bd                Close current buffer (tab)
+    :NERDTreeToggle    Shows/Hides NERDTree split
+      or C-ww
+
+
+  # Navigating cursor
+    C-d                Half page down
+    C-u                Half page up
+    C-b                Page down
+    C-f                Page up
+    { / }              Previous / next paragraph
+    0 / $              Beginning / End of the line
+    Xgg                Xth line
+    b / w              Previous / Next word
+    %                  Matching bracket
+    FX / fX            Previous / next X character in the same line
+    [{                 Parent bracket
+
+
+  # Searching
+    *                  Search the word under the cursor in the file
+    :/findme           Search "findme"
+    n                  Next matching search pattern
+    N                  Previous matching search pattern
+  # Replacing
+    :%s/foo/bar/g      Replace all foo with bar
+    :5,10s/foo/bar/g   Replace foo with bar between lines 5-10
+    :'<,'>s/foo/bar/g  Replace foo with bar between the visual selection
+
+
+  # Plugins    
+    :PluginInstall     Install new plugins in vimrc file
+
+

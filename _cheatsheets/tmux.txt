@@ -1,0 +1,19 @@
+Prefix Key: CTRL + a
+
+  # Session, window, pane management
+    t       New window
+    n       Next window
+    ,       Rename window
+    h       Horizontal pane
+    g       Vertical pane
+    w       Close pane
+    q       Kill session
+
+    K      resize pane up
+    J      resize pane down
+    H      resize pane left
+    L      resize pane right
+
+  # Navigating cursor
+    C-a     Jump beginning of the line
+    C-e     Jump end of the line

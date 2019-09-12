@@ -25,6 +25,8 @@ alias ts='tmux new-session -s'
 alias tl='tmux list-sessions'
 alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
+alias cst='more ~/.dotfiles/_cheatsheets/tmux.txt'
+alias csv='more ~/.dotfiles/_cheatsheets/vim.txt'
 
 
 # nvm
