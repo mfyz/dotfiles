@@ -37,7 +37,8 @@
     :'<,'>s/foo/bar/g  Replace foo with bar between the visual selection
 
 
-  # Plugins    
+  # Plugins
     :PluginInstall     Install new plugins in vimrc file
-
+    :NERDTreeToggle    Toggles NERDTree view
+    :Goyo              Distraction-free writing
 

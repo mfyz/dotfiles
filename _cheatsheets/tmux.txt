@@ -2,10 +2,11 @@ Prefix Key: CTRL + a
 
   # Session, window, pane management
     t       New window
-    n       Next window
+    p / n   Previous / Next window
     ,       Rename window
     h       Horizontal pane
     g       Vertical pane
+	<spc>   Move pane to next layout (horizontal, vertical)
     w       Close pane
     q       Kill session
 
