@@ -18,8 +18,10 @@ plugins=(
   zsh-autosuggestions
   colored-man-pages
 )
-ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOQUIT=false
+if [[ $(hostname) == "remote-workspace" ]]; then
+  ZSH_TMUX_AUTOSTART=true
+  ZSH_TMUX_AUTOQUIT=false
+fi
 source $ZSH/oh-my-zsh.sh
 
 
@@ -37,6 +39,7 @@ export NVM_DIR="$HOME/.nvm"
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export CODE_PUSH_ACCESS_KEY="f4a8947293f79d10c701ea3b457dff0eaf1a00a6"
+export TERM="xterm-256color"
 
 if [[ $(hostname) == "mfyz-mbp.local" ]]; then
   export PATH="/usr/local/opt/php@7.2/bin:$PATH"

@@ -9,6 +9,7 @@ set showmatch         " highlight matching branket and parantheses
 set incsearch         " search as characters entered
 set hlsearch          " highlight matches in search
 set autoread          " reload file if updated outside vim
+set paste             " set auto-formatting/reindenting when pasting text block
 syntax enable
 
 
@@ -56,7 +57,7 @@ Plugin 'tpope/vim-surround'           " add surrounding quotes, parantheses, tag
 Plugin 'scrooloose/nerdtree'          " tree folder/project view
 Plugin 'Xuyuanp/nerdtree-git-plugin'  " NERDTree git flags
 Plugin 'vim-airline/vim-airline'      " styled vim statusbar
-Plugin 'valloric/youcompleteme'       " auto complete support
+"Plugin 'valloric/youcompleteme'       " auto complete support (require mac-specific installation)
 Plugin 'mattn/emmet-vim'              " Emmet
 Plugin 'tpope/vim-commentary'         " comment/uncomment quickly
 Plugin 'sheerun/vim-polyglot'         " tons of language support (syntax, indentation...)
