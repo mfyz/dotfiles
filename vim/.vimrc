@@ -91,3 +91,6 @@ let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#formatter='unique_tail'
 
 
+" File type specific configuration
+au BufRead,BufNewFile Podfile set filetype=ruby
+

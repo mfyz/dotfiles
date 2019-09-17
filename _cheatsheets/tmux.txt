@@ -6,7 +6,7 @@ Prefix Key: CTRL + a
     ,       Rename window
     h       Horizontal pane
     g       Vertical pane
-	<spc>   Move pane to next layout (horizontal, vertical)
+    <spc>   Move pane to next layout
     w       Close pane
     q       Kill session
 
