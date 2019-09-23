@@ -10,3 +10,6 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/theme
 echo "Set zsh theme like `ZSH_THEME="powerlevel9k/powerlevel9k"` in zsh"
 
 
+echo "Fetching secrets from dotfiles-secret repo"
+git clone git@github.com:mfyz/dotfiles-secret.git ~/.dotfiles-secret
+

@@ -13,6 +13,11 @@
 
 
   # Navigating cursor
+
+          ↑
+    ← h j k l →
+        ↓
+
     C-d                Half page down
     C-u                Half page up
     C-b                Page down

@@ -25,6 +25,13 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 
+# secrets
+SECRETS_FILE="$HOME/.dotfiles-secret/secrets.sh"
+if test -f "$SECRETS_FILE"; then
+  source $SECRETS_FILE
+fi
+
+
 # custom aliases
 source ~/.my-aliases.sh
 
@@ -38,7 +45,6 @@ export NVM_DIR="$HOME/.nvm"
 # env variables
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
-export CODE_PUSH_ACCESS_KEY="f4a8947293f79d10c701ea3b457dff0eaf1a00a6"
 export TERM="xterm-256color"
 
 if [[ $(hostname) == "mfyz-mbp.local" ]]; then
@@ -48,12 +54,11 @@ if [[ $(hostname) == "mfyz-mbp.local" ]]; then
   export PATH="/usr/local/opt/python/libexec/bin:$PATH"
   export PATH="/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7/bin:$PATH"
   export ANDROID_HOME="/Users/fatih/Library/Android/sdk"
-  export SLACK_CLI_TOKEN='xoxp-118588027139-119335193766-465504570466-06e79cfdad8826ab8dea06841fbc8720'
 fi
 
 
 # Welcome message (motd)
-if true; then
+if false; then
   clear
   echo
   #landscape-sysinfo
@@ -62,6 +67,7 @@ if true; then
 fi 
 
 # put me in the right place!
-cd ~/Development
-
+if [[ $(pwd) == $(echo ~) ]]; then
+  cd ~/Development
+fi
 
