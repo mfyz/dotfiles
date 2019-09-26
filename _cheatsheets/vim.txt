@@ -31,6 +31,14 @@
     [{                 Parent bracket
 
 
+  # Folding
+    Current level
+      zc               Fold current
+      zo               Open current
+    All levels
+      zM               Fold all levels
+      zR               Open all levels
+
   # Searching
     *                  Search the word under the cursor in the file
     :/findme           Search "findme"
