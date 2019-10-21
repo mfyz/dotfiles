@@ -1,8 +1,8 @@
 
 # zsh
-if [[ $(hostname) == "mfyz-mbp.local" ]]; then
-  export ZSH="/Users/fatih/.oh-my-zsh"
-elif [[ $(hostname) == "remote-workspace" ]]; then
+#if [[ $(hostname) == "mfyz-mbp.local" ]]; then
+export ZSH="/Users/fatih/.oh-my-zsh"
+if [[ $(hostname) == "remote-workspace" ]]; then
   export ZSH="/home/fatih/.oh-my-zsh"
 fi
 #ZSH_THEME="gnzh"
@@ -11,7 +11,7 @@ source ~/.mfyz-powerlevel9k.sh
 plugins=(
   git
   bundler
-  dotenv
+  # dotenv
   osx
   tmux
   zsh-syntax-highlighting
@@ -54,6 +54,7 @@ if [[ $(hostname) == "mfyz-mbp.local" ]]; then
   export PATH="/usr/local/opt/python/libexec/bin:$PATH"
   export PATH="/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7/bin:$PATH"
   export ANDROID_HOME="/Users/fatih/Library/Android/sdk"
+  export FASTLANE_HIDE_CHANGELOG=true
 fi
 
 

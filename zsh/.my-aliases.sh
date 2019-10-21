@@ -44,6 +44,15 @@ alias gs='git status'
 alias gl='git log'
 alias gd='git diff'
 alias gb='git branch'
+alias gbn='git checkout $(git rev-parse --abbrev-ref HEAD) -b'
+unalias gbD
+function gbD(){
+  export branch_to_delete=`git rev-parse --abbrev-ref HEAD`
+  git checkout dev
+  git branch -D $branch_to_delete
+}
+alias gbd='git checkout dev'
+alias gbm='git checkout master'
 alias gp='git push'
 alias gpf='git push --set-upstream origin master'
 alias gpd='git pull origin dev'
