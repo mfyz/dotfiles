@@ -53,6 +53,7 @@ function gbD(){
 }
 alias gbd='git checkout dev'
 alias gbm='git checkout master'
+alias grh='git reset --hard'
 alias gp='git push'
 alias gpf='git push --set-upstream origin master'
 alias gpd='git pull origin dev'
