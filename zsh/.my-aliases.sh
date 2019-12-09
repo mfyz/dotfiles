@@ -6,6 +6,8 @@ alias la='ls -a'
 alias er='edit ~/.mybashrc'
 alias sr='source ~/.mybashrc'
 alias ezr='edit ~/.zshrc'
+alias sza='source ~/.dotfiles/zsh/.my-aliases.sh'
+alias eza='edit ~/.dotfiles/zsh/.my-aliases.sh'
 alias szr='source ~/.zshrc'
 alias et='edit ~/.tmux.conf'
 alias cst='less ~/.dotfiles/_cheatsheets/tmux.txt'
@@ -39,18 +41,23 @@ alias dcd='docker-compose down -v'
 alias dcs='docker-compose start'
 alias dct='docker-compose stop'
 alias nr='npm run'
+alias nrd='npm run dev'
+alias nrc='npm run clean'
+alias nrt='npm run test'
+alias dnsrestart='sudo killall -HUP mDNSResponder'
 
 alias gs='git status'
 alias gl='git log'
 alias gd='git diff'
 alias gb='git branch'
 alias gbn='git checkout $(git rev-parse --abbrev-ref HEAD) -b'
-unalias gbD
+unalias gbD > /dev/null 2>&1
 function gbD(){
   export branch_to_delete=`git rev-parse --abbrev-ref HEAD`
   git checkout dev
   git branch -D $branch_to_delete
 }
+alias gbdd='gbD && gpl'
 alias gbd='git checkout dev'
 alias gbm='git checkout master'
 alias grh='git reset --hard'
