@@ -54,6 +54,10 @@ if [[ $(hostname) == "mfyz-mbp.local" ]]; then
   export PATH="/usr/local/opt/python/libexec/bin:$PATH"
   export PATH="/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7/bin:$PATH"
   export ANDROID_HOME="/Users/fatih/Library/Android/sdk"
+  export PATH=$PATH:$ANDROID_HOME/emulator
+  export PATH=$PATH:$ANDROID_HOME/tools
+  export PATH=$PATH:$ANDROID_HOME/tools/bin
+  export PATH=$PATH:$ANDROID_HOME/platform-tools
   export FASTLANE_HIDE_CHANGELOG=true
 fi
 
