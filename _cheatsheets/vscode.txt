@@ -1,0 +1,13 @@
+
+# Navigating
+  Ctrl+Up/Down     Jump to next/prev member (mishkinf.goto-next-previous-member plugin)   
+
+# Search & Find & Replace & Edit
+  Opt+A            Select parent quotes, parantheses, brackets (bracket-select plugin)
+  Shift+Alt+L      Select all occurances of search for multi cursor edit 
+
+
+# Lorem (tyriar.lorem-ipsum plugin)
+  Ctrl+L           Insert line of lorem ispum
+  Ctrl+Alt+L       Insert paragraph of lorem ispum
+  Ctrl+Alt+Cmd+L   Insert multiple paragraphs of lorem ispum

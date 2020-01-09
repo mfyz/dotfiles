@@ -48,11 +48,13 @@ export LANG="en_US.UTF-8"
 export TERM="xterm-256color"
 
 if [[ $(hostname) == "mfyz-mbp.local" ]]; then
+  export PATH="/usr/local/lib/node_modules/node/bin:$PATH"
   export PATH="/usr/local/opt/php@7.2/bin:$PATH"
   export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
   export PATH="$HOME/.fastlane/bin:$PATH"
   export PATH="/usr/local/opt/python/libexec/bin:$PATH"
   export PATH="/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7/bin:$PATH"
+  export PATH="$PATH:$HOME/.composer/vendor/bin"
   export ANDROID_HOME="/Users/fatih/Library/Android/sdk"
   export PATH=$PATH:$ANDROID_HOME/emulator
   export PATH=$PATH:$ANDROID_HOME/tools

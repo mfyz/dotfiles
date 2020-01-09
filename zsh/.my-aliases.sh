@@ -22,7 +22,7 @@ alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
 
 alias ai='sudo apt install'
-alias rn='react-native'
+alias rn='npx react-native'
 alias rnri='npx react-native run-ios'
 alias rnra='npx react-native run-android'
 alias rnli='npx react-native log-ios'
@@ -98,4 +98,9 @@ function firstgit() {
 
 function gc() {
     git clone $1
+}
+
+function gbsu() {
+	currentBranch=$(git branch | grep \* | cut -d ' ' -f2) 
+	git branch --set-upstream-to=origin/$currentBranch $currentBranch 
 }
