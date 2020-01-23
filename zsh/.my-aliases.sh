@@ -1,8 +1,12 @@
 alias edit='vim'
 alias ll='/bin/ls'
 alias lls='/bin/ls'
-alias ls='exa -lh -T -L 1'
 alias la='ls -a'
+if which colorls >/dev/null; then
+  alias ls='colorls -lA --sd'
+elif which exa >/dev/null; then
+  alias ls='exa -lh -T -L 1'
+fi
 alias er='edit ~/.mybashrc'
 alias sr='source ~/.mybashrc'
 alias ezr='edit ~/.zshrc'
