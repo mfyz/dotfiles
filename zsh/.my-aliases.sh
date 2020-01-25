@@ -7,6 +7,9 @@ if which colorls >/dev/null; then
 elif which exa >/dev/null; then
   alias ls='exa -lh -T -L 1'
 fi
+if [[ $(hostname) == "mfyzpi" ]]; then
+ alias ls='lls -lah --group-directories-first --color' 
+fi
 alias er='edit ~/.mybashrc'
 alias sr='source ~/.mybashrc'
 alias ezr='edit ~/.zshrc'
@@ -49,6 +52,7 @@ alias nr='npm run'
 alias nrd='npm run dev'
 alias nrc='npm run clean'
 alias nrt='npm run test'
+alias js='jekyll serve --host=0.0.0.0'
 alias dnsrestart='sudo killall -HUP mDNSResponder'
 
 alias gs='git status'
@@ -78,6 +82,7 @@ alias gch='git checkout'
 alias sg='siktirgit'
 alias hg='herokugit'
 alias fg='firstgit'
+
 
 function siktirgit(){
     git add .
