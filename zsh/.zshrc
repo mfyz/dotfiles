@@ -5,6 +5,9 @@ export ZSH="/Users/fatih/.oh-my-zsh"
 if [[ $(hostname) == "remote-workspace" ]]; then
   export ZSH="/home/fatih/.oh-my-zsh"
 fi
+if [[ $(hostname) == "mfyzpi" ]]; then
+  export ZSH="/home/pi/.oh-my-zsh"
+fi
 #ZSH_THEME="gnzh"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 source ~/.mfyz-powerlevel9k.sh
@@ -18,7 +21,7 @@ plugins=(
   zsh-autosuggestions
   colored-man-pages
 )
-if [[ $(hostname) == "remote-workspace" ]]; then
+if [[ $(hostname) == "remote-workspace" ]]  || [[ $(hostname) == "mfyzpi" ]]; then
   ZSH_TMUX_AUTOSTART=true
   ZSH_TMUX_AUTOQUIT=false
 fi
@@ -74,7 +77,7 @@ if false; then
 fi 
 
 # put me in the right place!
-if [[ $(pwd) == $(echo ~) ]]; then
+if [[ $(pwd) == $(echo ~) ]] && [[ -d ~/Development ]]; then
   cd ~/Development
 fi
 
