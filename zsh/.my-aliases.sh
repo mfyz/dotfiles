@@ -43,11 +43,6 @@ alias hl='heroku logs --tail'
 alias jr='node /Users/fatih/Development/jira-reporter/index.js'
 alias hc='hub create'
 alias hb='hub browse'
-alias dc='docker-compose'
-alias dcu='docker-compose up -d'
-alias dcd='docker-compose down -v'
-alias dcs='docker-compose start'
-alias dct='docker-compose stop'
 alias nr='npm run'
 alias nrd='npm run dev'
 alias nrc='npm run clean'
@@ -58,6 +53,14 @@ alias dnsrestart='sudo killall -HUP mDNSResponder'
 alias pew='sudo vim /etc/wpa_supplicant/wpa_supplicant.conf'
 alias prw='sudo wpa_cli -i wlan0 reconfigure'
 alias psw='sudo iwlist wlan0 scan | grep ESSID'
+
+alias dc='docker-compose'
+alias dcu='docker-compose up -d'
+alias dcd='docker-compose down -v'
+alias dcs='docker-compose start'
+alias dct='docker-compose stop'
+alias dwp="docker-compose run --rm wpcli"
+alias dcls="docker container ls"
 
 alias gs='git status'
 alias gl='git log'
@@ -87,16 +90,23 @@ alias sg='siktirgit'
 alias hg='herokugit'
 alias fg='firstgit'
 
-
-function siktirgit(){
+function git_add_commit(){
     git add .
     git commit -a -m "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $19 $19 $20"
+}
+
+function siktirgit(){
+    git_add_commit $1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $19 $19 $20
     git push origin
 }
 
+function sgmr(){
+    git_add_commit $1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $19 $19 $20
+	git push -o merge_request.create -o merge_request.target=dev -o merge_request.merge_when_pipeline_succeeds -o merge_request.remove_source_branch origin
+}
+
 function herokugit(){
-    git add .
-    git commit -a -m "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $18 $19 $20"
+	git_add_commit $1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $19 $19 $20
     currentBranch=$(git branch | grep \* | cut -d ' ' -f2)
     git push heroku $currentBranch:master
 }
