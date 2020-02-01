@@ -55,6 +55,10 @@ alias nrt='npm run test'
 alias js='jekyll serve --host=0.0.0.0'
 alias dnsrestart='sudo killall -HUP mDNSResponder'
 
+alias pew='sudo vim /etc/wpa_supplicant/wpa_supplicant.conf'
+alias prw='sudo wpa_cli -i wlan0 reconfigure'
+alias psw='sudo iwlist wlan0 scan | grep ESSID'
+
 alias gs='git status'
 alias gl='git log'
 alias gd='git diff'
