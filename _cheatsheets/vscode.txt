@@ -1,13 +1,55 @@
 
-# Navigating
-  Ctrl+Up/Down     Jump to next/prev member (mishkinf.goto-next-previous-member plugin)   
+# Shortcuts - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Search & Find & Replace & Edit
-  Opt+A            Select parent quotes, parantheses, brackets (bracket-select plugin)
+  Opt+A            Select parent quotes, parantheses, brackets
+                   (bracket-select plugin)
   Shift+Alt+L      Select all occurances of search for multi cursor edit 
-
 
 # Lorem (tyriar.lorem-ipsum plugin)
   Ctrl+L           Insert line of lorem ispum
   Ctrl+Alt+L       Insert paragraph of lorem ispum
   Ctrl+Alt+Cmd+L   Insert multiple paragraphs of lorem ispum
+
+# Bracket Select
+  ALT+A            Select text between open/close brackets.
+                   Press more to select upper scope
+
+# Dash / Help / Documentation
+  CTRL+H          Search in docs of the specific docs by the language
+  CTRL+ALT+H      Search in all docs
+
+# Fold Level
+  ALT+N (1-9)     Open until fold level N
+
+# Rewrap
+  ALT+Q           Wraps the long lines automatically
+
+
+# Commands - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+# Better Comments - In comment lines
+  Add @ for doc block formatting
+  Add ? for blue
+  Add ! for red (important/depreciated)
+  Add * for green
+
+# Beautify
+  Run "Beautify" commands to format selection or whole doc
+
+# Encode Decode
+  Search "Encode/Decode" commands for md5, base64,
+    htmlentities, utfencdoe, urlencode
+
+# ES5 to ES6
+  Run the command "ES5 to ES6" for js conversion
+
+# Polacode
+  Run "Polacode" to open polacode's preview window for taking screenshots
+    of the code.
+
+# React
+  Run "class to className" to convert class definitions to className in
+    pasted code easily
+
