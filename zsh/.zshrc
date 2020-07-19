@@ -1,12 +1,16 @@
 
 # zsh
-#if [[ $(hostname) == "mfyz-mbp.local" ]]; then
-export ZSH="/Users/fatih/.oh-my-zsh"
+if [[ $(hostname) == "mfyz-mbp.local" ]]; then
+  export ZSH="/Users/fatih/.oh-my-zsh"
+fi
 if [[ $(hostname) == "remote-workspace" ]]; then
   export ZSH="/home/fatih/.oh-my-zsh"
 fi
 if [[ $(hostname) == "mfyzpi" ]]; then
   export ZSH="/home/pi/.oh-my-zsh"
+fi
+if [[ $(hostname) == "mfyzw" ]]; then
+  export ZSH="/root/.oh-my-zsh"
 fi
 #ZSH_THEME="gnzh"
 ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -21,7 +25,7 @@ plugins=(
   zsh-autosuggestions
   colored-man-pages
 )
-if [[ $(hostname) == "remote-workspace" ]]  || [[ $(hostname) == "mfyzpi" ]]; then
+if [[ $(hostname) == "remote-workspace" ]] || [[ $(hostname) == "mfyzpi" ]]; then
   ZSH_TMUX_AUTOSTART=true
   ZSH_TMUX_AUTOQUIT=false
 fi
@@ -50,7 +54,7 @@ export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export TERM="xterm-256color"
 
-if [[ $(hostname) == "mfyz-mbp.local" ]]; then
+if [[ $(hostname) == "mfyz.local" ]]; then
   export PATH="/usr/local/lib/node_modules/node/bin:$PATH"
   export PATH="/usr/local/opt/php@7.2/bin:$PATH"
   export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
@@ -64,8 +68,13 @@ if [[ $(hostname) == "mfyz-mbp.local" ]]; then
   export PATH=$PATH:$ANDROID_HOME/tools/bin
   export PATH=$PATH:$ANDROID_HOME/platform-tools
   export FASTLANE_HIDE_CHANGELOG=true
+  # ruby via rbenv
+  if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 fi
 
+if [[ $(hostname) == "mfyzw" ]]; then
+  export PATH=$PATH:/root/.cargo/bin
+fi
 
 # Welcome message (motd)
 if false; then
@@ -81,3 +90,5 @@ if [[ $(pwd) == $(echo ~) ]] && [[ -d ~/Development ]]; then
   cd ~/Development
 fi
 
+
+[ -f "/Users/fatih/.shopify-app-cli/shopify.sh" ] && source "/Users/fatih/.shopify-app-cli/shopify.sh"

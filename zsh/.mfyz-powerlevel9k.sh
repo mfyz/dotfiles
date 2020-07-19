@@ -1,9 +1,10 @@
 
 #if [[ $(hostname) == 'mfyz-mbp.local' ]]; then
 #  source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
-#elif [[ $(hostname) == 'remote-workspace' ]]; then
-#  source ~/.oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
 #fi
+if [[ $(hostname) == 'remote-workspace' ]] || [[ $(hostname) == 'mfyzw' ]]; then
+  source ~/.oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
+fi
 
 # CUSTOMIZATION
 
