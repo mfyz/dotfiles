@@ -134,3 +134,9 @@ function gbsu() {
 	currentBranch=$(git branch | grep \* | cut -d ' ' -f2) 
 	git branch --set-upstream-to=origin/$currentBranch $currentBranch 
 }
+
+if [[ $(hostname) == "mfyzw" ]]; then
+   alias o='explorer.exe'
+   alias sublime='/mnt/c/Program\ Files\ \(x86\)/Sublime\ Text\ 3/subl.exe'
+fi
+
