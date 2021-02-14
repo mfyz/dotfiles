@@ -50,7 +50,7 @@ export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export TERM="xterm-256color"
 
-if [[ $(hostname) == "mfyz-mbp.local" ]]; then
+if [[ $(hostname) == "mfyz.local" ]]; then
   export PATH="/usr/local/lib/node_modules/node/bin:$PATH"
   export PATH="/usr/local/opt/php@7.2/bin:$PATH"
   export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
@@ -64,6 +64,10 @@ if [[ $(hostname) == "mfyz-mbp.local" ]]; then
   export PATH=$PATH:$ANDROID_HOME/tools/bin
   export PATH=$PATH:$ANDROID_HOME/platform-tools
   export FASTLANE_HIDE_CHANGELOG=true
+  # ruby via rbenv
+  if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+  export JAVA_HOME=$(/usr/libexec/java_home)
+  export PATH=$JAVA_HOME/bin:$PATH
 fi
 
 
@@ -81,3 +85,21 @@ if [[ $(pwd) == $(echo ~) ]] && [[ -d ~/Development ]]; then
   cd ~/Development
 fi
 
+
+[ -f "/Users/fatih/.shopify-app-cli/shopify.sh" ] && source "/Users/fatih/.shopify-app-cli/shopify.sh"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/fatih/Development/serverless-nodejs-template/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/fatih/Development/serverless-nodejs-template/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/fatih/Development/serverless-nodejs-template/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/fatih/Development/serverless-nodejs-template/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/fatih/Development/serverless-nodejs-template/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/fatih/Development/serverless-nodejs-template/node_modules/tabtab/.completions/slss.zsh
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+alias -g wsend='/Users/fatih/.wsend/wsend'
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

@@ -20,6 +20,8 @@ alias et='edit ~/.tmux.conf'
 alias cst='less ~/.dotfiles/_cheatsheets/tmux.txt'
 alias csv='less ~/.dotfiles/_cheatsheets/vim.txt'
 alias gcdf='export BACK_TO_DIR=$(pwd); cd ~/.dotfiles; git add .; git commit -m"Auto commit"; git push; cd $BACK_TO_DIR'
+alias php5='/Applications/MAMP/bin/php/php5.4.45/bin/php'
+alias django-admin='python3 /Users/fatih/Library/Python/3.7/lib/python/site-packages/django/bin/django-admin.py'
 
 alias ta='tmux attach -t'
 alias tad='tmux attach -d -t'
@@ -43,7 +45,10 @@ alias hl='heroku logs --tail'
 alias jr='node /Users/fatih/Development/jira-reporter/index.js'
 alias hc='hub create'
 alias hb='hub browse'
+alias ni='npm install'
 alias nr='npm run'
+alias ns='npm start'
+alias nrs='npm start'
 alias nrd='npm run dev'
 alias nrc='npm run clean'
 alias nrt='npm run test'
@@ -53,6 +58,8 @@ alias dnsrestart='sudo killall -HUP mDNSResponder'
 alias pew='sudo vim /etc/wpa_supplicant/wpa_supplicant.conf'
 alias prw='sudo wpa_cli -i wlan0 reconfigure'
 alias psw='sudo iwlist wlan0 scan | grep ESSID'
+
+alias sshmndb='ssh -L 3310:localhost:3306 mn'
 
 alias dc='docker-compose'
 alias dcu='docker-compose up -d'
@@ -73,11 +80,25 @@ function gbD(){
   git checkout dev
   git branch -D $branch_to_delete
 }
+function gbDs(){
+  export branch_to_delete=`git rev-parse --abbrev-ref HEAD`
+  git checkout staging
+  git branch -D $branch_to_delete
+}
+function gbDm(){
+  export branch_to_delete=`git rev-parse --abbrev-ref HEAD`
+  git checkout master
+  git branch -D $branch_to_delete
+}
 alias gbdd='gbD && gpl'
+alias gbsd='gbDs && gpl'
+alias gbmd='gbDm && gpl'
 alias gbd='git checkout dev'
 alias gbm='git checkout master'
 alias grh='git reset --hard'
 alias gp='git push'
+alias gbsom='git branch --set-upstream-to=origin/master master'
+alias gbsod='git branch --set-upstream-to=origin/dev dev'
 alias gpf='git push --set-upstream origin master'
 alias gpd='git pull origin dev'
 alias gpdf='git pull origin dev:fatih -f'
@@ -127,3 +148,6 @@ function gbsu() {
 	currentBranch=$(git branch | grep \* | cut -d ' ' -f2) 
 	git branch --set-upstream-to=origin/$currentBranch $currentBranch 
 }
+
+alias -g wsend='~/.wsend/wsend'
+alias dm='ssh mfyz "cd /data/www/mfyz.com/wp-content/themes/mfyz; git pull"'

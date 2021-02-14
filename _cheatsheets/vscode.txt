@@ -5,6 +5,10 @@
   Opt+A            Select parent quotes, parantheses, brackets
                    (bracket-select plugin)
   Shift+Alt+L      Select all occurances of search for multi cursor edit 
+                   or Alt+Enter
+
+# MultiCursor
+  Cmd+Opt + ↑ / ↓  Add lines to multi-edit
 
 # Lorem (tyriar.lorem-ipsum plugin)
   Ctrl+L           Insert line of lorem ispum
