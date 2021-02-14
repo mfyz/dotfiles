@@ -1,0 +1,12 @@
+
+# Window Management
+  Win + M       Minimize all windows
+  Win + D       Show desktop
+  Win + S       Search
+  Win + A       Show notification center
+
+# Other
+
+  Win + ;       Emoji Picker
+
+

@@ -151,3 +151,8 @@ function gbsu() {
 
 alias -g wsend='~/.wsend/wsend'
 alias dm='ssh mfyz "cd /data/www/mfyz.com/wp-content/themes/mfyz; git pull"'
+
+if [[ $(hostname) == "mfyzw" ]]; then
+   alias o='explorer.exe'
+   alias sublime='/mnt/c/Program\ Files\ \(x86\)/Sublime\ Text\ 3/subl.exe'
+fi

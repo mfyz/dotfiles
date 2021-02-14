@@ -1,12 +1,16 @@
 
 # zsh
-#if [[ $(hostname) == "mfyz-mbp.local" ]]; then
-export ZSH="/Users/fatih/.oh-my-zsh"
+if [[ $(hostname) == "mfyz-mbp.local" ]]; then
+  export ZSH="/Users/fatih/.oh-my-zsh"
+fi
 if [[ $(hostname) == "remote-workspace" ]]; then
   export ZSH="/home/fatih/.oh-my-zsh"
 fi
 if [[ $(hostname) == "mfyzpi" ]]; then
   export ZSH="/home/pi/.oh-my-zsh"
+fi
+if [[ $(hostname) == "mfyzw" ]]; then
+  export ZSH="/root/.oh-my-zsh"
 fi
 #ZSH_THEME="gnzh"
 ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -21,7 +25,7 @@ plugins=(
   zsh-autosuggestions
   colored-man-pages
 )
-if [[ $(hostname) == "remote-workspace" ]]  || [[ $(hostname) == "mfyzpi" ]]; then
+if [[ $(hostname) == "remote-workspace" ]] || [[ $(hostname) == "mfyzpi" ]]; then
   ZSH_TMUX_AUTOSTART=true
   ZSH_TMUX_AUTOQUIT=false
 fi
@@ -70,6 +74,9 @@ if [[ $(hostname) == "mfyz.local" ]]; then
   export PATH=$JAVA_HOME/bin:$PATH
 fi
 
+if [[ $(hostname) == "mfyzw" ]]; then
+  export PATH=$PATH:/root/.cargo/bin
+fi
 
 # Welcome message (motd)
 if false; then
@@ -88,6 +95,7 @@ fi
 
 [ -f "/Users/fatih/.shopify-app-cli/shopify.sh" ] && source "/Users/fatih/.shopify-app-cli/shopify.sh"
 
+
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
 [[ -f /Users/fatih/Development/serverless-nodejs-template/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/fatih/Development/serverless-nodejs-template/node_modules/tabtab/.completions/serverless.zsh
@@ -103,3 +111,4 @@ fi
 alias -g wsend='/Users/fatih/.wsend/wsend'
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
