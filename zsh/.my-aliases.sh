@@ -156,3 +156,19 @@ if [[ $(hostname) == "mfyzw" ]]; then
    alias o='explorer.exe'
    alias sublime='/mnt/c/Program\ Files\ \(x86\)/Sublime\ Text\ 3/subl.exe'
 fi
+
+# macos apache mysql
+alias hosts='sudo vim /private/etc/hosts'
+alias apache-start='sudo apachectl start'
+alias apache-restart='sudo apachectl restart'
+alias apache-stop='sudo apachectl stop'
+alias apache-configtest='apachectl configtest'
+alias apache-conf='sudo vim /etc/apache2/httpd.conf'
+alias apache-vhost='sudo vim /private/etc/apache2/extra/httpd-vhosts.conf'
+alias mysql-start='sudo /usr/local/mysql/support-files/mysql.server start'
+alias mysql-restart='sudo /usr/local/mysql/support-files/mysql.server restart'
+alias mysql-stop='sudo /usr/local/mysql/support-files/mysql.server stop'
+alias mysql-conf='sudo vim /etc/my.cnf'
+alias php-ini='sudo vim /usr/local/etc/php/5.6/php.ini'
+
+

@@ -9,6 +9,15 @@
 Some of the config folders are not standard dotfiles, they may need to ne installed manually. Currently install.sh will skip folder names starting with underscore. See each folder for it's installation steps. Generally scripted.
 
 
+## Install ZSH Plugins and Pl9k theme
+
+```
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/themes/powerlevel9k
+```
+
+
 # Todos
 
 [ ] Add vscode config files for mac https://pawelgrzybek.com/sync-vscode-settings-and-snippets-via-dotfiles-on-github/

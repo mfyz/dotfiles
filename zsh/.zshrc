@@ -54,7 +54,7 @@ export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export TERM="xterm-256color"
 
-if [[ $(hostname) == "mfyz.local" ]]; then
+if [[ $(hostname) == "mfyz-mbp.local" ]]; then
   export PATH="/usr/local/lib/node_modules/node/bin:$PATH"
   export PATH="/usr/local/opt/php@7.2/bin:$PATH"
   export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
@@ -62,14 +62,19 @@ if [[ $(hostname) == "mfyz.local" ]]; then
   export PATH="/usr/local/opt/python/libexec/bin:$PATH"
   export PATH="/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7/bin:$PATH"
   export PATH="$PATH:$HOME/.composer/vendor/bin"
+  export ANDROID_SDK=$HOME/Library/Android/sdk
+  export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH
   export ANDROID_HOME="/Users/fatih/Library/Android/sdk"
   export PATH=$PATH:$ANDROID_HOME/emulator
   export PATH=$PATH:$ANDROID_HOME/tools
   export PATH=$PATH:$ANDROID_HOME/tools/bin
   export PATH=$PATH:$ANDROID_HOME/platform-tools
   export FASTLANE_HIDE_CHANGELOG=true
-  # ruby via rbenv
-  if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+  # ruby via rbenv # if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+  export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
+  export PATH="/usr/local/opt/ruby@2.7/bin:$PATH"
+  export LDFLAGS="-L/usr/local/opt/ruby@2.7/lib"
+  export CPPFLAGS="-I/usr/local/opt/ruby@2.7/include"
   export JAVA_HOME=$(/usr/libexec/java_home)
   export PATH=$JAVA_HOME/bin:$PATH
 fi
@@ -111,4 +116,4 @@ fi
 alias -g wsend='/Users/fatih/.wsend/wsend'
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
+export PATH="/usr/local/mysql/bin:$PATH"
