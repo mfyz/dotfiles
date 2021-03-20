@@ -52,6 +52,12 @@ alias nrs='npm start'
 alias nrd='npm run dev'
 alias nrc='npm run clean'
 alias nrt='npm run test'
+alias y='yarn'
+alias ya='yarn add'
+alias yi='yarn install'
+alias ys='yarn start'
+alias yr='yarn run'
+alias yd='yarn dev'
 alias js='jekyll serve --host=0.0.0.0'
 alias dnsrestart='sudo killall -HUP mDNSResponder'
 
@@ -156,6 +162,8 @@ if [[ $(hostname) == "mfyzw" ]]; then
    alias o='explorer.exe'
    alias sublime='/mnt/c/Program\ Files\ \(x86\)/Sublime\ Text\ 3/subl.exe'
 fi
+
+alias d='icdiff'
 
 # macos apache mysql
 alias hosts='sudo vim /private/etc/hosts'

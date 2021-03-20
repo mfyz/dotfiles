@@ -1,6 +1,6 @@
 
 # zsh
-if [[ $(hostname) == "mfyz-mbp.local" ]]; then
+if [[ $(hostname) =~ "mfyz-mbp" ]]; then
   export ZSH="/Users/fatih/.oh-my-zsh"
 fi
 if [[ $(hostname) == "remote-workspace" ]]; then
