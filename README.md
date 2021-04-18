@@ -17,6 +17,11 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/themes/powerlevel9k
 ```
 
+## Vim Plugins
+Install Vundle https://github.com/VundleVim/Vundle.vim with:
+```git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim```
+Launch vim and run `:PluginInstall`
+
 
 # Todos
 

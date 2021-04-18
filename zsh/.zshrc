@@ -1,7 +1,8 @@
 
 # zsh
-if [[ $(hostname) =~ "mfyz-mbp" ]]; then
+if [[ $(hostname) =~ "mfyz-mbp" || $(hostname) =~ "mfyz-air" ]]; then
   export ZSH="/Users/fatih/.oh-my-zsh"
+  export PATH=$HOME/bin:/usr/local/bin:$PATH
 fi
 if [[ $(hostname) == "remote-workspace" ]]; then
   export ZSH="/home/fatih/.oh-my-zsh"
@@ -54,7 +55,8 @@ export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export TERM="xterm-256color"
 
-if [[ $(hostname) == "mfyz-mbp.local" ]]; then
+if [[ $(hostname) =~ "mfyz-mbp" || $(hostname) =~ "mfyz-air" ]]; then
+  export PATH="/opt/homebrew/bin:$PATH"
   export PATH="/usr/local/lib/node_modules/node/bin:$PATH"
   export PATH="/usr/local/opt/php@7.2/bin:$PATH"
   export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
@@ -77,6 +79,7 @@ if [[ $(hostname) == "mfyz-mbp.local" ]]; then
   export CPPFLAGS="-I/usr/local/opt/ruby@2.7/include"
   export JAVA_HOME=$(/usr/libexec/java_home)
   export PATH=$JAVA_HOME/bin:$PATH
+  export EDITOR='sublime'
 fi
 
 if [[ $(hostname) == "mfyzw" ]]; then
@@ -117,3 +120,4 @@ alias -g wsend='/Users/fatih/.wsend/wsend'
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/mysql/bin:$PATH"
+
