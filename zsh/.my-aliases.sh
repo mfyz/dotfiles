@@ -10,6 +10,7 @@ fi
 if [[ $(hostname) == "mfyzpi" ]]; then
  alias ls='lls -lah --group-directories-first --color' 
 fi
+alias sublime='subl'
 alias er='edit ~/.mybashrc'
 alias sr='source ~/.mybashrc'
 alias ezr='edit ~/.zshrc'
