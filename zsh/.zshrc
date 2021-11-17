@@ -17,6 +17,8 @@ if [[ $(hostname) == "arc-C00636" ]]; then
   export ZSH="/Users/yildizf/.oh-my-zsh"
   export PATH=$HOME/bin:/usr/local/bin:$PATH
   export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+  export PATH="$HOME/Library/Python/3.8/bin:$PATH"
+  export AWS_PROFILE=yildizm
 fi
 #ZSH_THEME="gnzh"
 ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -25,7 +27,7 @@ plugins=(
   git
   bundler
   # dotenv
-  osx
+  macos
   tmux
   zsh-syntax-highlighting
   zsh-autosuggestions
