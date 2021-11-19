@@ -22,6 +22,9 @@ Install Vundle https://github.com/VundleVim/Vundle.vim with:
 ```git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim```
 Launch vim and run `:PluginInstall`
 
+## Install Ruby via rbenv
+https://gist.github.com/stonehippo/cc0f3098516fb52390f1
+
 
 # Todos
 
@@ -35,3 +38,9 @@ Launch vim and run `:PluginInstall`
 - tmux for session/scree/pane management in cli
 - fortune, cowsay, lolcatjs for daily inpirationals in motd
 
+
+# Other
+Sublime Stuff
+- Auto Hide Tabs: https://github.com/croach/SublimeHideTabs
+- Markdown default: https://medium.com/@edgar/use-markdown-as-default-language-for-new-documents-in-sublime-text-3266471e01a4
+- Clickable urls: https://stackoverflow.com/a/55172358

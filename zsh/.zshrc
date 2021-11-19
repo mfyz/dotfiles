@@ -1,8 +1,8 @@
 
 # zsh
 if [[ $(hostname) =~ "mfyz-mbp" || $(hostname) =~ "mfyz-air" ]]; then
+  export PATH=$HOME/bin:/opt/homebrew/bin:/usr/local/bin:$PATH
   export ZSH="/Users/fatih/.oh-my-zsh"
-  export PATH=$HOME/bin:/usr/local/bin:$PATH
 fi
 if [[ $(hostname) == "remote-workspace" ]]; then
   export ZSH="/home/fatih/.oh-my-zsh"
@@ -21,7 +21,7 @@ plugins=(
   bundler
   # dotenv
   osx
-  tmux
+  # tmux
   zsh-syntax-highlighting
   zsh-autosuggestions
   colored-man-pages
@@ -30,6 +30,7 @@ if [[ $(hostname) == "remote-workspace" ]] || [[ $(hostname) == "mfyzpi" ]]; the
   ZSH_TMUX_AUTOSTART=true
   ZSH_TMUX_AUTOQUIT=false
 fi
+DISABLE_MAGIC_FUNCTIONS=true
 source $ZSH/oh-my-zsh.sh
 
 
@@ -56,7 +57,6 @@ export LANG="en_US.UTF-8"
 export TERM="xterm-256color"
 
 if [[ $(hostname) =~ "mfyz-mbp" || $(hostname) =~ "mfyz-air" ]]; then
-  export PATH="/opt/homebrew/bin:$PATH"
   export PATH="/usr/local/lib/node_modules/node/bin:$PATH"
   export PATH="/usr/local/opt/php@7.2/bin:$PATH"
   export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
@@ -72,13 +72,15 @@ if [[ $(hostname) =~ "mfyz-mbp" || $(hostname) =~ "mfyz-air" ]]; then
   export PATH=$PATH:$ANDROID_HOME/tools/bin
   export PATH=$PATH:$ANDROID_HOME/platform-tools
   export FASTLANE_HIDE_CHANGELOG=true
-  # ruby via rbenv # if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-  export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
-  export PATH="/usr/local/opt/ruby@2.7/bin:$PATH"
-  export LDFLAGS="-L/usr/local/opt/ruby@2.7/lib"
-  export CPPFLAGS="-I/usr/local/opt/ruby@2.7/include"
+  # ruby via rbenv 
+  if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+  #export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
+  #export PATH="/usr/local/opt/ruby@2.7/bin:$PATH"
+  #export LDFLAGS="-L/usr/local/opt/ruby@2.7/lib"
+  #export CPPFLAGS="-I/usr/local/opt/ruby@2.7/include"
   export JAVA_HOME=$(/usr/libexec/java_home)
   export PATH=$JAVA_HOME/bin:$PATH
+  export GEM_HOME="$HOME/.gem"
   export EDITOR='sublime'
 fi
 

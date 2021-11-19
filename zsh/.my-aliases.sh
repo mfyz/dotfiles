@@ -1,4 +1,9 @@
-alias edit='vim'
+if [ $TERM_PROGRAM = "iTerm.app" ]; then
+  alias edit='sublime'
+else
+  alias edit='vim'
+fi
+alias s='sublime'
 alias ll='/bin/ls'
 alias lls='/bin/ls'
 alias la='ls -a'
@@ -15,6 +20,7 @@ alias sr='source ~/.mybashrc'
 alias ezr='edit ~/.zshrc'
 alias sza='source ~/.dotfiles/zsh/.my-aliases.sh'
 alias eza='edit ~/.dotfiles/zsh/.my-aliases.sh'
+alias esza='sublime ~/.dotfiles/zsh/.my-aliases.sh'
 alias szr='source ~/.zshrc'
 alias et='edit ~/.tmux.conf'
 alias cst='less ~/.dotfiles/_cheatsheets/tmux.txt'
@@ -44,6 +50,7 @@ alias c.='code .'
 alias hl='heroku logs --tail'
 alias jr='node /Users/fatih/Development/jira-reporter/index.js'
 alias hc='hub create'
+alias hcp='hub create -p'
 alias hb='hub browse'
 alias ni='npm install'
 alias nr='npm run'
@@ -179,4 +186,21 @@ alias mysql-stop='sudo /usr/local/mysql/support-files/mysql.server stop'
 alias mysql-conf='sudo vim /etc/my.cnf'
 alias php-ini='sudo vim /usr/local/etc/php/5.6/php.ini'
 
+alias timer='termdown'
+alias play-alert='afplay  /System/Library/Sounds/Sosumi.aiff'
+function notify() {
+  osascript -e "display notification \"$1 $2 $3 $4 $5 $6 $7 $8 $9\""
+}
+function notify-with-sound() {
+  osascript -e "display notification \"$1 $2 $3 $4 $5 $6 $7 $8 $9\" sound name \"Hero\""
+}
+function t() {
+  echo -n "Started: " && date
+  echo "Duration: $1"
+  timer -B $1 && notify-with-sound "${2-Timer is Done}" && echo -n "Finished: " && date
+}
 
+alias sh='shopify'
+alias shs='shopify serve'
+alias v='vercel'
+alias vp='v --prod'
