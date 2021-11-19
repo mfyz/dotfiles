@@ -13,6 +13,13 @@ fi
 if [[ $(hostname) == "mfyzw" ]]; then
   export ZSH="/root/.oh-my-zsh"
 fi
+if [[ $(hostname) == "arc-C00636" ]]; then
+  export ZSH="/Users/yildizf/.oh-my-zsh"
+  export PATH=$HOME/bin:/usr/local/bin:$PATH
+  export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+  export PATH="$HOME/Library/Python/3.8/bin:$PATH"
+  export AWS_PROFILE=yildizm
+fi
 #ZSH_THEME="gnzh"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 source ~/.mfyz-powerlevel9k.sh
@@ -20,7 +27,7 @@ plugins=(
   git
   bundler
   # dotenv
-  osx
+  macos
   # tmux
   zsh-syntax-highlighting
   zsh-autosuggestions
@@ -49,6 +56,9 @@ source ~/.my-aliases.sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# if installed from brew-x86
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 
 
 # env variables
@@ -56,7 +66,8 @@ export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export TERM="xterm-256color"
 
-if [[ $(hostname) =~ "mfyz-mbp" || $(hostname) =~ "mfyz-air" ]]; then
+if [[ $(hostname) =~ "mfyz-mbp" || $(hostname) =~ "mfyz-air" || $(hostname) =~ "arc-C00636" ]]; then
+  export PATH="/opt/homebrew/bin:$PATH"
   export PATH="/usr/local/lib/node_modules/node/bin:$PATH"
   export PATH="/usr/local/opt/php@7.2/bin:$PATH"
   export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
