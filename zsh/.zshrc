@@ -42,6 +42,7 @@ if [[ $(hostname) == "remote-workspace" ]] || [[ $(hostname) == "mfyzpi" ]]; the
   ZSH_TMUX_AUTOQUIT=false
 fi
 DISABLE_MAGIC_FUNCTIONS=true
+ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
 
