@@ -1,0 +1,42 @@
+# Selecting
+
+  Shift + Space       Select Row
+  Ctrl + Space        Select Column
+
+
+# Nagivating
+
+  Ctrl + Opt + E      Edit Menu
+  Ctrl + Opt + I      Insert Menu
+  Ctrl + Opt + O      Format Menu
+
+
+# Common Chains
+
+  Insert Row Below
+    Ctrl + Opt + O    Insert Menu
+    R                 Insert Row
+    B                 Insert Below
+
+  Delete Row(s)
+    Shift + Space     Select Row
+    (Up/Down)         Select More Rows
+    Ctrl + Opt + E    Edit Menu
+    D                 Delete
+    D                 Deelte Selected Rows
+
+  Merge Cells
+    Ctrl + Opt + O    Format Menu
+    M                 Merge
+    A                 Merge All
+
+    (or) Unmerge
+    U                 Unmerge All
+
+  Align Center
+    Ctrl + Opt + O    Format Menu
+    A                 Align
+    C                 Center
+
+    (or) Verticle Middle
+    M                 Middle
