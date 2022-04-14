@@ -4,6 +4,10 @@
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/mfyz/dotfiles/master/install.sh)"`
 
 
+# Other stuff to install
+- Fig - Autocomplete
+- Atuin - for better bash history: https://github.com/ellie/atuin
+
 # Manual config folders
 
 Some of the config folders are not standard dotfiles, they may need to ne installed manually. Currently install.sh will skip folder names starting with underscore. See each folder for it's installation steps. Generally scripted.

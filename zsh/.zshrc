@@ -1,7 +1,6 @@
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the start of this file.
-[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
-#### END FIG ENV VARIABLES ####
+# Fig pre block. Keep at the top of this file.
+export PATH="${PATH}:${HOME}/.local/bin"
+eval "$(fig init zsh pre)"
 
 # zsh
 if [[ $(hostname) =~ "mfyz-mbp" || $(hostname) =~ "mfyz-air" ]]; then
@@ -139,3 +138,7 @@ alias -g wsend='/Users/fatih/.wsend/wsend'
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/mysql/bin:$PATH"
 
+# Fig post block. Keep at the bottom of this file.
+eval "$(fig init zsh post)"
+
+eval "$(atuin init zsh)"

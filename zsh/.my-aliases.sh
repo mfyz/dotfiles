@@ -201,7 +201,7 @@ function t() {
   timer -B $1 && notify-with-sound "${2-Timer is Done}" && echo -n "Finished: " && date
 }
 
-alias sh='shopify'
+alias shp='shopify'
 alias shs='shopify serve'
 alias v='vercel'
 alias vp='v --prod'
