@@ -201,6 +201,16 @@ function t() {
   timer -B $1 && notify-with-sound "${2-Timer is Done}" && echo -n "Finished: " && date
 }
 
+function ned(){
+  OLD_IFS="$IFS"
+  IFS='-'
+  NED_FILE="$HOME/$*.excalidraw.png"
+  IFS=$OLD_IFS
+  echo "Created $NED_FILE"
+  touch $NED_FILE
+  code $NED_FILE
+}
+
 alias shp='shopify'
 alias shs='shopify serve'
 alias v='vercel'

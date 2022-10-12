@@ -1,7 +1,5 @@
 # Fig pre block. Keep at the top of this file.
-export PATH="${PATH}:${HOME}/.local/bin"
-eval "$(fig init zsh pre)"
-
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 # zsh
 if [[ $(hostname) =~ "mfyz-mbp" || $(hostname) =~ "mfyz-air" ]]; then
   export PATH=$HOME/bin:/opt/homebrew/bin:/usr/local/bin:$PATH
@@ -140,7 +138,7 @@ alias -g wsend='/Users/fatih/.wsend/wsend'
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/mysql/bin:$PATH"
 
-# Fig post block. Keep at the bottom of this file.
-eval "$(fig init zsh post)"
-
 eval "$(atuin init zsh)"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
