@@ -204,7 +204,7 @@ function t() {
 function ned(){
   OLD_IFS="$IFS"
   IFS='-'
-  NED_FILE="$HOME/$*.excalidraw.png"
+  NED_FILE="$HOME/Desktop/$*.excalidraw.png"
   IFS=$OLD_IFS
   echo "Created $NED_FILE"
   touch $NED_FILE
