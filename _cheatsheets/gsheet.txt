@@ -11,10 +11,18 @@
   Ctrl + Opt + O      Format Menu
 
 
+# Grouping
+
+  Opt + Shift + →     Group
+  Opt + Shift + ←     Ungroup
+  Opt + Shift + ↑     Collapse
+  Opt + Shift + ↓     Expand
+
+
 # Common Chains
 
   Insert Row Below
-    Ctrl + Opt + O    Insert Menu
+    Ctrl + Opt + I    Insert Menu
     R                 Insert Row
     B                 Insert Below
 
