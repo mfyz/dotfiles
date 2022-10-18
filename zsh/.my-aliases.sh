@@ -208,7 +208,7 @@ function ned(){
   IFS=$OLD_IFS
   echo "Created $NED_FILE"
   touch $NED_FILE
-  code $NED_FILE
+  code $NED_FILE || eval "/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron $NED_FILE"
 }
 
 alias shp='shopify'
