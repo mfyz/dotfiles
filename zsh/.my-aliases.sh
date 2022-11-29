@@ -208,10 +208,14 @@ function ned(){
   IFS=$OLD_IFS
   echo "Created $NED_FILE"
   touch $NED_FILE
-  code $NED_FILE || eval "/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron $NED_FILE"
+  code -n $NED_FILE || eval "/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron -n $NED_FILE"
 }
 
 alias shp='shopify'
 alias shs='shopify serve'
 alias v='vercel'
 alias vp='v --prod'
+alias sq='steampipe query'
+alias sqj='steampipe query --output json'
+alias sqc='steampipe query --output csv'
+alias create-gitignore='curl -o .gitignore https://raw.githubusercontent.com/github/gitignore/main/Node.gitignore'
