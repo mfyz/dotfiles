@@ -1,8 +1,9 @@
 if [ $TERM_PROGRAM = "iTerm.app" ]; then
-  alias edit='sublime'
+  alias edit='code'
 else
   alias edit='vim'
 fi
+alias e='edit'
 alias s='sublime'
 alias ll='/bin/ls'
 alias lls='/bin/ls'
