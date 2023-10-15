@@ -1,2 +1,1 @@
-def onlyvalues:
-	[ keys[] as $k | .[$k] ]
+def onlyvalues: [ keys[] as $k | .[$k] ];

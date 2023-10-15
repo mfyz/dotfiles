@@ -3,6 +3,7 @@
 # zsh
 if [[ $(hostname) =~ "mfyz-air" || $(hostname) =~ "felix-air" ]]; then
   export PATH=$HOME/bin:/opt/homebrew/bin:/usr/local/bin:$PATH
+  export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
   export ZSH="/Users/fatih/.oh-my-zsh"
 fi
 if [[ $(hostname) == "remote-workspace" ]]; then
