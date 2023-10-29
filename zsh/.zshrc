@@ -140,7 +140,8 @@ alias -g wsend='/Users/fatih/.wsend/wsend'
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/mysql/bin:$PATH"
 
-eval "$(atuin init zsh)"
+# eval "$(atuin init zsh)"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
