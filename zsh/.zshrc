@@ -1,5 +1,5 @@
 # Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # zsh
 if [[ $(hostname) =~ "mfyz-mbp" || $(hostname) =~ "mfyz-air" ]]; then
   export PATH=$HOME/bin:/opt/homebrew/bin:/usr/local/bin:$PATH
@@ -16,10 +16,11 @@ if [[ $(hostname) == "mfyzw" ]]; then
 fi
 if [[ $(hostname) == "arc-C00636" ]]; then
   export ZSH="/Users/yildizf/.oh-my-zsh"
-  export PATH=$HOME/bin:/usr/local/bin:$PATH
+  export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$PATH
   export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
   export PATH="$HOME/Library/Python/3.8/bin:$PATH"
   export AWS_PROFILE=yildizm
+  source $HOME/.okta/env-vars
 fi
 #ZSH_THEME="gnzh"
 ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -140,5 +141,3 @@ export PATH="/usr/local/mysql/bin:$PATH"
 
 eval "$(atuin init zsh)"
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
