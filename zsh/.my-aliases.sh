@@ -1,8 +1,9 @@
 if [ $TERM_PROGRAM = "iTerm.app" ]; then
-  alias edit='sublime'
+  alias edit='code'
 else
   alias edit='vim'
 fi
+alias e='edit'
 alias s='sublime'
 alias ll='/bin/ls'
 alias lls='/bin/ls'
@@ -27,8 +28,8 @@ alias et='edit ~/.tmux.conf'
 alias cst='less ~/.dotfiles/_cheatsheets/tmux.txt'
 alias csv='less ~/.dotfiles/_cheatsheets/vim.txt'
 alias gcdf='export BACK_TO_DIR=$(pwd); cd ~/.dotfiles; git add .; git commit -m"Auto commit"; git push; cd $BACK_TO_DIR'
-alias php5='/Applications/MAMP/bin/php/php5.4.45/bin/php'
-alias django-admin='python3 /Users/fatih/Library/Python/3.7/lib/python/site-packages/django/bin/django-admin.py'
+#alias php5='/Applications/MAMP/bin/php/php5.4.45/bin/php'
+#alias django-admin='python3 /Users/fatih/Library/Python/3.7/lib/python/site-packages/django/bin/django-admin.py'
 
 alias ta='tmux attach -t'
 alias tad='tmux attach -d -t'
@@ -208,10 +209,14 @@ function ned(){
   IFS=$OLD_IFS
   echo "Created $NED_FILE"
   touch $NED_FILE
-  code $NED_FILE || eval "/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron $NED_FILE"
+  code -n $NED_FILE || eval "/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron -n $NED_FILE"
 }
 
 alias shp='shopify'
 alias shs='shopify serve'
 alias v='vercel'
 alias vp='v --prod'
+alias sq='steampipe query'
+alias sqj='steampipe query --output json'
+alias sqc='steampipe query --output csv'
+alias create-gitignore='curl -o .gitignore https://raw.githubusercontent.com/github/gitignore/main/Node.gitignore'

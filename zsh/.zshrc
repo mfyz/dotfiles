@@ -1,8 +1,9 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # zsh
-if [[ $(hostname) =~ "mfyz-mbp" || $(hostname) =~ "mfyz-air" ]]; then
+if [[ $(hostname) =~ "mfyz-air" || $(hostname) =~ "felix-air" ]]; then
   export PATH=$HOME/bin:/opt/homebrew/bin:/usr/local/bin:$PATH
+  export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
   export ZSH="/Users/fatih/.oh-my-zsh"
 fi
 if [[ $(hostname) == "remote-workspace" ]]; then
@@ -70,7 +71,7 @@ export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export TERM="xterm-256color"
 
-if [[ $(hostname) =~ "mfyz-mbp" || $(hostname) =~ "mfyz-air" || $(hostname) =~ "arc-C00636" ]]; then
+if [[ $(hostname) =~ "felix-air" || $(hostname) =~ "mfyz-air" || $(hostname) =~ "arc-C00636" ]]; then
   export PATH="/opt/homebrew/bin:$PATH"
   export PATH="/usr/local/lib/node_modules/node/bin:$PATH"
   export PATH="/usr/local/opt/php@7.2/bin:$PATH"
@@ -78,6 +79,7 @@ if [[ $(hostname) =~ "mfyz-mbp" || $(hostname) =~ "mfyz-air" || $(hostname) =~ "
   export PATH="$HOME/.fastlane/bin:$PATH"
   export PATH="/usr/local/opt/python/libexec/bin:$PATH"
   export PATH="/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7/bin:$PATH"
+  export PATH="/Users/fatih/Library/Python/3.9/bin:$PATH"
   export PATH="$PATH:$HOME/.composer/vendor/bin"
   export ANDROID_SDK=$HOME/Library/Android/sdk
   export ANDROID_HOME="$HOME/Library/Android/sdk"
@@ -96,7 +98,7 @@ if [[ $(hostname) =~ "mfyz-mbp" || $(hostname) =~ "mfyz-air" || $(hostname) =~ "
   export JAVA_HOME=$(/usr/libexec/java_home)
   export PATH=$JAVA_HOME/bin:$PATH
   export GEM_HOME="$HOME/.gem"
-  export EDITOR='sublime'
+  export EDITOR='code'
 fi
 
 if [[ $(hostname) == "mfyzw" ]]; then
@@ -141,4 +143,3 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/mysql/bin:$PATH"
 
 eval "$(atuin init zsh)"
-
