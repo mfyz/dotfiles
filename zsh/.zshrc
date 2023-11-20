@@ -19,8 +19,9 @@ if [[ $(hostname) == "arc-C00636" ]]; then
   export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$PATH
   export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
   export PATH="$HOME/Library/Python/3.8/bin:$PATH"
-  export AWS_PROFILE=yildizm
+  # export AWS_PROFILE=yildizm
   source $HOME/.okta/env-vars
+  alias clokta=okta-aws-cli  -o $OKTA_ORG_DOMAIN -c $OKTA_OIDC_CLIENT_ID -e -b -z
 fi
 #ZSH_THEME="gnzh"
 ZSH_THEME="powerlevel9k/powerlevel9k"
