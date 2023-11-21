@@ -22,7 +22,7 @@ if [[ $(hostname) == "arc-C00636" ]]; then
   export PATH="$HOME/Library/Python/3.8/bin:$PATH"
   # export AWS_PROFILE=yildizm
   source $HOME/.okta/env-vars
-  alias clokta=okta-aws-cli  -o $OKTA_ORG_DOMAIN -c $OKTA_OIDC_CLIENT_ID -e -b -z
+  alias clokta=okta-aws-cli  -o $OKTA_ORG_DOMAIN -c $OKTA_OIDC_CLIENT_ID -e -b -z -s 43200
 fi
 #ZSH_THEME="gnzh"
 ZSH_THEME="powerlevel9k/powerlevel9k"
