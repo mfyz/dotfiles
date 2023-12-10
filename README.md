@@ -13,12 +13,12 @@
 Some of the config folders are not standard dotfiles, they may need to ne installed manually. Currently install.sh will skip folder names starting with underscore. See each folder for it's installation steps. Generally scripted.
 
 
-## Install ZSH Plugins and Pl9k theme
+## Install ZSH Plugins and PowerLevel10k theme
 
 ```
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/themes/powerlevel9k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 ```
 
 ## Vim Plugins
@@ -38,7 +38,7 @@ https://gist.github.com/stonehippo/cc0f3098516fb52390f1
 
 # Tools used
 
-- zsh + oh-my-zsh + powerlevel9k
+- zsh + oh-my-zsh + powerlevel10k
 - tmux for session/scree/pane management in cli
 - fortune, cowsay, lolcatjs for daily inpirationals in motd
 

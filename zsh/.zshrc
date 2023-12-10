@@ -1,6 +1,11 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-# zsh
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# zsh -----------------------------------------------------------------------------------------------------------------
 if [[ $(hostname) =~ "mfyz-air" || $(hostname) =~ "felix-air" ]]; then
   export PATH=$HOME/bin:/opt/homebrew/bin:/usr/local/bin:$PATH
   export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
@@ -24,9 +29,12 @@ if [[ $(hostname) == "arc-C00636" ]]; then
   source $HOME/.okta/env-vars
   alias clokta=okta-aws-cli  -o $OKTA_ORG_DOMAIN -c $OKTA_OIDC_CLIENT_ID -e -b -z -s 43200
 fi
+
 #ZSH_THEME="gnzh"
-ZSH_THEME="powerlevel9k/powerlevel9k"
-source ~/.mfyz-powerlevel9k.sh
+ZSH_THEME="powerlevel10k/powerlevel10k"
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 plugins=(
   git
   bundler
@@ -46,18 +54,18 @@ ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
 
-# secrets
+# secrets --------------------------------------------------------------------------------------------------------------
 SECRETS_FILE="$HOME/.dotfiles-secret/secrets.sh"
 if test -f "$SECRETS_FILE"; then
   source $SECRETS_FILE
 fi
 
 
-# custom aliases
+# custom aliases -------------------------------------------------------------------------------------------------------
 source ~/.my-aliases.sh
 
 
-# nvm
+# nvm ------------------------------------------------------------------------------------------------------------------
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
@@ -66,7 +74,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 
 
-# env variables
+# env variables --------------------------------------------------------------------------------------------------------
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export TERM="xterm-256color"
@@ -121,21 +129,6 @@ fi
 
 
 [ -f "/Users/fatih/.shopify-app-cli/shopify.sh" ] && source "/Users/fatih/.shopify-app-cli/shopify.sh"
-
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/fatih/Development/serverless-nodejs-template/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/fatih/Development/serverless-nodejs-template/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/fatih/Development/serverless-nodejs-template/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/fatih/Development/serverless-nodejs-template/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/fatih/Development/serverless-nodejs-template/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/fatih/Development/serverless-nodejs-template/node_modules/tabtab/.completions/slss.zsh
-# tabtab source for packages
-# uninstall by removing these lines
-[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
-
 
 alias -g wsend='/Users/fatih/.wsend/wsend'
 
