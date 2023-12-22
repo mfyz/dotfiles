@@ -221,3 +221,4 @@ alias sqj='steampipe query --output json'
 alias sqc='steampipe query --output csv'
 alias create-gitignore='curl -o .gitignore https://raw.githubusercontent.com/github/gitignore/main/Node.gitignore'
 alias shdotenv='export $(grep -v "^#" .env | xargs)'
+alias cdf="cd ~/.dotfiles"
