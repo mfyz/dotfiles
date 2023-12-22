@@ -24,3 +24,6 @@
 
 [status]
 	showUntrackedFiles = all
+
+[core]
+	excludesfile = ~/.gitignore
