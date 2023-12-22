@@ -223,3 +223,4 @@ alias create-gitignore='curl -o .gitignore https://raw.githubusercontent.com/git
 alias shdotenv='export $(grep -v "^#" .env | xargs)'
 alias cdf="cd ~/.dotfiles"
 alias cds="cd ~/.ssh"
+alias cdd="cd ~/Development"
