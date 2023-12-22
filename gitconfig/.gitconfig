@@ -26,4 +26,4 @@
 	showUntrackedFiles = all
 
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/yildizf/.gitignore
