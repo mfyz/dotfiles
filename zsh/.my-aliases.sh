@@ -125,6 +125,8 @@ alias gch='git checkout'
 alias sg='siktirgit'
 alias hg='herokugit'
 alias fg='firstgit'
+alias ghb='gh browse'
+alias gho='gh browse'
 
 function git_add_commit(){
     git add .
