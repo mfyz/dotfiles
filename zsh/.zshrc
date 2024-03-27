@@ -20,14 +20,15 @@ fi
 if [[ $(hostname) == "mfyzw" ]]; then
   export ZSH="/root/.oh-my-zsh"
 fi
-if [[ $(hostname) == "arc-C00636" ]]; then
-  export ZSH="/Users/yildizf/.oh-my-zsh"
+if [[ $(hostname) == "arc-C02637" ]]; then
+  export ZSH="/Users/yildizm/.oh-my-zsh"
   export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$PATH
-  export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+  export PATH="/Applications/Docker.app/Contents/Resources/bin:$PATH"
   export PATH="$HOME/Library/Python/3.8/bin:$PATH"
   # export AWS_PROFILE=yildizm
   source $HOME/.okta/env-vars
-  alias clokta=okta-aws-cli -o $OKTA_ORG_DOMAIN -c $OKTA_OIDC_CLIENT_ID -e -b -z -s 43200
+  # alias clokta=okta-aws-cli -o $OKTA_ORG_DOMAIN -c $OKTA_OIDC_CLIENT_ID -e -b -z -s 43200
+  alias clokta="sh ~/.source-okta.sh"
 fi
 
 #ZSH_THEME="gnzh"
