@@ -10,8 +10,8 @@ alias lls='/bin/ls'
 alias la='ls -a'
 if which colorls >/dev/null; then
   alias ls='colorls -lA --sd'
-elif which exa >/dev/null; then
-  alias ls='exa -lh -T -L 1'
+elif which lsd >/dev/null; then
+  alias ls='lsd -la'
 fi
 if [[ $(hostname) == "mfyzpi" ]]; then
  alias ls='lls -lah --group-directories-first --color' 
@@ -48,7 +48,7 @@ alias cdnm='/usr/local/lib/node_modules/'
 alias enable_charles='export http_proxy="http://127.0.0.1:8888";export https_proxy="http://127.0.0.1:8888"'
 alias c2p='python ~/Development/charles_to_postman/charles_to_postman.py'
 alias o='open .'
-alias c.='code .'
+alias c.='cursor .'
 alias hl='heroku logs --tail'
 alias jr='node /Users/fatih/Development/jira-reporter/index.js'
 alias hc='hub create'
