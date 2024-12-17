@@ -10,6 +10,11 @@ if [[ $(hostname) =~ "mfyz-air" || $(hostname) =~ "felix-air" ]]; then
   export PATH=$HOME/bin:/opt/homebrew/bin:/usr/local/bin:$PATH
   export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
   export ZSH="/Users/fatih/.oh-my-zsh"
+  if [ -f "/Users/fatih/.config/op/plugins.sh" ]; then
+    source "/Users/fatih/.config/op/plugins.sh"
+  fi
+  export GEM_HOME=$HOME/.gem
+  export PATH=$GEM_HOME/bin:$PATH
 fi
 if [[ $(hostname) == "remote-workspace" ]]; then
   export ZSH="/home/fatih/.oh-my-zsh"
@@ -24,7 +29,7 @@ if [[ $(hostname) == "arc-C02637" ]]; then
   export ZSH="/Users/yildizm/.oh-my-zsh"
   export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$PATH
   export PATH="/Applications/Docker.app/Contents/Resources/bin:$PATH"
-  export PATH="$HOME/Library/Python/3.8/bin:$PATH"
+  # export PATH="$HOME/Library/Python/3.8/bin:$PATH"
   # export AWS_PROFILE=yildizm
   source $HOME/.okta/env-vars
   # alias clokta=okta-aws-cli -o $OKTA_ORG_DOMAIN -c $OKTA_OIDC_CLIENT_ID -e -b -z -s 43200
@@ -85,10 +90,11 @@ if [[ $(hostname) =~ "felix-air" || $(hostname) =~ "mfyz-air" || $(hostname) =~ 
   export PATH="/usr/local/lib/node_modules/node/bin:$PATH"
   export PATH="/usr/local/opt/php@7.2/bin:$PATH"
   export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
+  export PATH="$HOME/.local/bin:$PATH"
   export PATH="$HOME/.fastlane/bin:$PATH"
-  export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-  export PATH="/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7/bin:$PATH"
-  export PATH="/Users/fatih/Library/Python/3.9/bin:$PATH"
+  # export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+  # export PATH="/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7/bin:$PATH"
+  # export PATH="/Users/fatih/Library/Python/3.9/bin:$PATH"
   export PATH="$PATH:$HOME/.composer/vendor/bin"
   export ANDROID_SDK=$HOME/Library/Android/sdk
   export ANDROID_HOME="$HOME/Library/Android/sdk"
@@ -137,3 +143,6 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/mysql/bin:$PATH"
 
 eval "$(atuin init zsh)"
+
+# Added by Windsurf
+export PATH="/Users/fatih/.codeium/windsurf/bin:$PATH"

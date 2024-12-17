@@ -1,5 +1,8 @@
+if command -v windsurf &> /dev/null; then
+  alias code='windsurf'
+fi
 if [ $TERM_PROGRAM = "iTerm.app" ]; then
-  alias edit='code'
+  alias edit='if command -v windsurf &> /dev/null; then windsurf; else code; fi'
 else
   alias edit='vim'
 fi
@@ -48,7 +51,7 @@ alias cdnm='/usr/local/lib/node_modules/'
 alias enable_charles='export http_proxy="http://127.0.0.1:8888";export https_proxy="http://127.0.0.1:8888"'
 alias c2p='python ~/Development/charles_to_postman/charles_to_postman.py'
 alias o='open .'
-alias c.='if command -v cursor &> /dev/null; then cursor .; else code .; fi'
+alias c.='if command -v windsurf &> /dev/null; then windsurf .; else code .; fi'
 alias hl='heroku logs --tail'
 alias jr='node /Users/fatih/Development/jira-reporter/index.js'
 alias hc='hub create'
@@ -76,12 +79,14 @@ alias psw='sudo iwlist wlan0 scan | grep ESSID'
 
 alias sshmndb='ssh -L 3310:localhost:3306 mn'
 
-alias dc='docker-compose'
-alias dcu='docker-compose up -d'
-alias dcd='docker-compose down -v'
-alias dcs='docker-compose start'
-alias dct='docker-compose stop'
-alias dwp="docker-compose run --rm wpcli"
+alias dc='docker compose'
+alias dcu='docker compose up'
+alias dcud='docker compose up -d'
+alias dcub='docker compose up --build'
+alias dcd='docker compose down -v'
+alias dcs='docker compose start'
+alias dct='docker compose stop'
+alias dwp="docker compose run --rm wpcli"
 alias dcls="docker container ls"
 
 alias gs='git status'
