@@ -6,7 +6,17 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # zsh -----------------------------------------------------------------------------------------------------------------
-if [[ $(hostname) =~ "mfyz-air" || $(hostname) =~ "felix-air" ]]; then
+if [[ "$(uname)" == "Darwin" ]]; then
+  if [[ "$(hostname)" == "Mac" ]]; then
+    HOSTNAME=$(networksetup -getcomputername)
+  else
+    HOSTNAME=$(hostname)
+  fi
+else
+  HOSTNAME=$(hostname)
+fi
+
+if [[ $HOSTNAME =~ "mfyz-MBP" || $HOSTNAME =~ "felix-air" ]]; then
   export PATH=$HOME/bin:/opt/homebrew/bin:/usr/local/bin:$PATH
   export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
   export ZSH="/Users/fatih/.oh-my-zsh"
@@ -16,16 +26,16 @@ if [[ $(hostname) =~ "mfyz-air" || $(hostname) =~ "felix-air" ]]; then
   export GEM_HOME=$HOME/.gem
   export PATH=$GEM_HOME/bin:$PATH
 fi
-if [[ $(hostname) == "remote-workspace" ]]; then
+if [[ $HOSTNAME == "remote-workspace" ]]; then
   export ZSH="/home/fatih/.oh-my-zsh"
 fi
-if [[ $(hostname) == "mfyzpi" ]]; then
+if [[ $HOSTNAME == "mfyzpi" ]]; then
   export ZSH="/home/pi/.oh-my-zsh"
 fi
-if [[ $(hostname) == "mfyzw" ]]; then
+if [[ $HOSTNAME == "mfyzw" ]]; then
   export ZSH="/root/.oh-my-zsh"
 fi
-if [[ $(hostname) == "arc-C02637" ]]; then
+if [[ $HOSTNAME == "arc-C02637" ]]; then
   export ZSH="/Users/yildizm/.oh-my-zsh"
   export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$PATH
   export PATH="/Applications/Docker.app/Contents/Resources/bin:$PATH"
