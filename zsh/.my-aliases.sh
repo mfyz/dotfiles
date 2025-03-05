@@ -1,11 +1,8 @@
-if command -v windsurf &> /dev/null; then
-  alias code='windsurf'
-fi
-if [ $TERM_PROGRAM = "iTerm.app" ]; then
-  alias edit='if command -v windsurf &> /dev/null; then windsurf; else code; fi'
-else
+#if [ $TERM_PROGRAM = "iTerm.app" ]; then
+  #alias edit='if command -v windsurf &> /dev/null; then windsurf; else code; fi'
+#else
   alias edit='vim'
-fi
+#fi
 alias e='edit'
 alias s='sublime'
 alias ll='/bin/ls'

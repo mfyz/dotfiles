@@ -156,3 +156,6 @@ eval "$(atuin init zsh)"
 
 # Added by Windsurf
 export PATH="/Users/fatih/.codeium/windsurf/bin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/fatih/.lmstudio/bin"
