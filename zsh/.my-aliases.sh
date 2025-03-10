@@ -48,7 +48,11 @@ alias cdnm='/usr/local/lib/node_modules/'
 alias enable_charles='export http_proxy="http://127.0.0.1:8888";export https_proxy="http://127.0.0.1:8888"'
 alias c2p='python ~/Development/charles_to_postman/charles_to_postman.py'
 alias o='open .'
-alias c.='if command -v windsurf &> /dev/null; then windsurf .; else code .; fi'
+if command -v code-insiders &> /dev/null && ! command -v code &> /dev/null; then
+  alias code='code-insiders'
+fi
+#alias c.='if command -v code-insiders &> /dev/null; then code-insiders .; else code .; fi'
+alias c.='code .'
 alias hl='heroku logs --tail'
 alias jr='node /Users/fatih/Development/jira-reporter/index.js'
 alias hc='hub create'
