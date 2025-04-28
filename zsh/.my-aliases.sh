@@ -52,7 +52,9 @@ if command -v code-insiders &> /dev/null && ! command -v code &> /dev/null; then
   alias code='code-insiders'
 fi
 #alias c.='if command -v code-insiders &> /dev/null; then code-insiders .; else code .; fi'
-alias c.='code .'
+# alias c.='code .'
+alias c.='windsurf .'
+alias w.='windsurf .'
 alias hl='heroku logs --tail'
 alias jr='node /Users/fatih/Development/jira-reporter/index.js'
 alias hc='hub create'
