@@ -1,4 +1,50 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(gh issue view:*)",
+      "Bash(gh issue edit:*)",
+      "Bash(gh issue create:*)",
+      "Bash(gh issue comment:*)",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(rg:*)",
+      "Bash(grep:*)",
+      "Bash(sed:*)",
+      "Bash(mkdir:*)",
+      "Bash(curl:*)",
+      "Bash(sqlite3:*)",
+      "Bash(npm install:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm run migrate:*)",
+      "Bash(npm run test)",
+      "Bash(npm run test:*)",
+      "Bash(npm run test:unit:*)",
+      "Bash(npm run test:e2e:*)",
+      "Bash(npm run:*)",
+      "Bash(npm run quality:*)",
+      "Bash(npm run pre-commit:*)",
+      "Bash(npm run lint:*)",
+      "Bash(npm test:*)",
+      "Bash(CI=true npm run test:e2e)",
+      "Bash(npx playwright screenshot:*)",
+      "mcp__mcp-puppeteer__puppeteer_navigate",
+      "mcp__mcp-puppeteer__puppeteer_screenshot",
+      "mcp__mcp-puppeteer__puppeteer_evaluate",
+      "mcp__filesystem__read_multiple_files",
+      "mcp__filesystem__directory_tree",
+      "mcp__sequential-thinking__sequentialthinking",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:localhost)",
+      "WebFetch(domain:docs.anthropic.com)"
+    ],
+    "deny": [
+      "Bash(jest:*)",
+      "Bash(phpunit:*)",
+      "Bash(npx jest:*)",
+      "Bash(playwright test:*)",
+      "Bash(npx playwright test:*)"
+    ]
+  },
   "hooks": {
     "Stop": [
       {
@@ -18,6 +64,30 @@
           {
             "type": "command",
             "command": "~/.claude/hooks/user_input_needed.sh"
+          }
+        ]
+      }
+    ],
+    "pre-tool": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/block_sh_rm.js"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/use_npm_commands.js"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [[ \"$CLAUDE_FILE_PATHS\" =~ \\.(ts|tsx)$ ]]; then npx tsc --noEmit --skipLibCheck \"$CLAUDE_FILE_PATHS\" || echo '⚠️ TypeScript errors detected - please review'; fi"
           }
         ]
       }
