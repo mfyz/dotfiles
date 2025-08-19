@@ -39,28 +39,15 @@ alias tl='tmux list-sessions'
 alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
 
-alias ai='sudo apt install'
-alias rn='npx react-native'
-alias rnri='npx react-native run-ios'
-alias rnra='npx react-native run-android'
-alias rnli='npx react-native log-ios'
-alias rnla='npx react-native log-android'
 alias cdnm='/usr/local/lib/node_modules/'
 alias enable_charles='export http_proxy="http://127.0.0.1:8888";export https_proxy="http://127.0.0.1:8888"'
-alias c2p='python ~/Development/charles_to_postman/charles_to_postman.py'
 alias o='open .'
 if command -v code-insiders &> /dev/null && ! command -v code &> /dev/null; then
   alias code='code-insiders'
 fi
 #alias c.='if command -v code-insiders &> /dev/null; then code-insiders .; else code .; fi'
 # alias c.='code .'
-alias c.='windsurf .'
-alias w.='windsurf .'
-alias hl='heroku logs --tail'
-alias jr='node /Users/fatih/Development/jira-reporter/index.js'
-alias hc='hub create'
-alias hcp='hub create -p'
-alias hb='hub browse'
+alias c.='cursor .'
 alias ni='npm install'
 alias nr='npm run'
 alias ns='npm start'
@@ -128,7 +115,6 @@ alias gpd='git pull origin dev'
 alias gpdf='git pull origin dev:fatih -f'
 alias gmd='git merge origin/dev'
 alias gms='git merge origin/staging'
-alias hp='herokugit'
 alias gpl='git pull'
 alias gch='git checkout'
 alias sg='siktirgit'
@@ -235,3 +221,5 @@ alias shdotenv='export $(grep -v "^#" .env | xargs)'
 alias cdf="cd ~/.dotfiles"
 alias cds="cd ~/.ssh"
 alias cdd="cd ~/Development"
+alias cl="claude"
+alias clp="claude --dangerously-skip-permissions"

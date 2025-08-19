@@ -1,0 +1,187 @@
+[
+  {
+    "session_id": "9f4aa622-6652-44a6-91ed-1c7707ace715",
+    "blocked_command": "rm debug-test.js",
+    "timestamp": "2025-07-18T19:44:49.928Z"
+  },
+  {
+    "session_id": "d2d6f047-a3f9-4f68-8aec-a597428f31ff",
+    "blocked_command": "# Move root tests to _tests folder directly\nmv _tests/root/utils.test.js _tests/\nrmdir _tests/root",
+    "timestamp": "2025-07-22T03:11:59.913Z"
+  },
+  {
+    "session_id": "0bad8b55-4d02-4eba-b0a5-fc7b785ba32c",
+    "blocked_command": "rm /Users/fatih/Development/shopify-apps/inventory-status-3/components/IndicatorPreview.test.js",
+    "timestamp": "2025-07-23T01:29:58.569Z"
+  },
+  {
+    "session_id": "2ef5801b-1abb-4052-a871-67cb2f560ec5",
+    "blocked_command": "rm /Users/fatih/Development/shopify-apps/inventory-status/test-lint-hook.js",
+    "timestamp": "2025-07-23T20:51:59.613Z"
+  },
+  {
+    "session_id": "2ef5801b-1abb-4052-a871-67cb2f560ec5",
+    "blocked_command": "rm /Users/fatih/Development/shopify-apps/inventory-status/debug-css.js",
+    "timestamp": "2025-07-23T20:58:35.000Z"
+  },
+  {
+    "session_id": "2ef5801b-1abb-4052-a871-67cb2f560ec5",
+    "blocked_command": "rm debug-test.js debug-test-2.js",
+    "timestamp": "2025-07-24T01:03:33.908Z"
+  },
+  {
+    "session_id": "4efe9cdc-b176-4b8c-9d0b-aea328ccd150",
+    "blocked_command": "rm -rf .next",
+    "timestamp": "2025-07-28T03:19:31.880Z"
+  },
+  {
+    "session_id": "ca45846b-2b6b-4cdc-8940-44f142c81f70",
+    "blocked_command": "rm -rf .next/cache",
+    "timestamp": "2025-07-28T03:38:23.254Z"
+  },
+  {
+    "session_id": "bc001388-8570-42f3-9f32-bf383cd458b6",
+    "blocked_command": "rm \"/Users/fatih/Development/panelone/plans/redesign-plan_images/04-dashboard-current-boxes.jpg\" \"/Users/fatih/Development/panelone/plans/redesign-plan_images/05-dashboard-daily-monthly-sales.png\"",
+    "timestamp": "2025-07-29T01:48:14.873Z"
+  },
+  {
+    "session_id": "4f43fe5a-48ae-4b21-ae2f-986bc33e3c01",
+    "blocked_command": "rm /Users/fatih/Development/shopify-apps/inventory-status/_tests/debug-save.test.js",
+    "timestamp": "2025-07-30T03:26:34.989Z"
+  },
+  {
+    "session_id": "4f43fe5a-48ae-4b21-ae2f-986bc33e3c01",
+    "blocked_command": "rm /Users/fatih/Development/shopify-apps/inventory-status/_tests/DELETE_debug-save.test.js",
+    "timestamp": "2025-07-30T12:28:17.141Z"
+  },
+  {
+    "session_id": "6bd3ecb4-9484-428a-a7dc-d1dc1b94bcee",
+    "blocked_command": "rm /Users/fatih/Development/shopify-apps/inventory-status/_e2e/validation/validation-tests.spec.js",
+    "timestamp": "2025-07-31T03:24:48.866Z"
+  },
+  {
+    "session_id": "6bd3ecb4-9484-428a-a7dc-d1dc1b94bcee",
+    "blocked_command": "rm /Users/fatih/Development/shopify-apps/inventory-status/.github/workflows/validation_tests.yml",
+    "timestamp": "2025-07-31T03:24:48.924Z"
+  },
+  {
+    "session_id": "0f21ee83-306c-4c1c-82f1-e9c779b9db4f",
+    "blocked_command": "rm setup-typescript.sh",
+    "timestamp": "2025-07-31T19:55:42.430Z"
+  },
+  {
+    "session_id": "fb232507-34b9-4f55-8a86-ce0379c00a91",
+    "blocked_command": "git rm --cached tsconfig.tsbuildinfo",
+    "timestamp": "2025-08-01T20:49:06.173Z"
+  },
+  {
+    "session_id": "1f3e871c-74fd-4b53-b392-0e14e0cbeb0e",
+    "blocked_command": "rm axiom-query.js",
+    "timestamp": "2025-08-02T16:35:19.110Z"
+  },
+  {
+    "session_id": "d1f0b567-ef19-4083-8d32-aa7a0104191d",
+    "blocked_command": "rm /Users/fatih/Development/shopify-apps/inventory-status/scripts/db-copy-mysql-to-postgres.js",
+    "timestamp": "2025-08-02T17:47:02.175Z"
+  },
+  {
+    "session_id": "7c01ec87-c802-4679-927d-257f9ca3820b",
+    "blocked_command": "rm -rf db/migrations",
+    "timestamp": "2025-08-02T18:24:53.958Z"
+  },
+  {
+    "session_id": "7c01ec87-c802-4679-927d-257f9ca3820b",
+    "blocked_command": "rm /Users/fatih/Development/shopify-apps/inventory-status/check-migrations.sql /Users/fatih/Development/shopify-apps/inventory-status/clean-drizzle.sql /Users/fatih/Development/shopify-apps/inventory-status/fix-migration-hash.sql /Users/fatih/Development/shopify-apps/inventory-status/scripts/drizzle-bootstrap.js",
+    "timestamp": "2025-08-02T19:20:11.117Z"
+  },
+  {
+    "session_id": "7372d900-4f05-41ff-8014-25ec3bf6372c",
+    "blocked_command": "mv prisma/schema.prisma db/ && rmdir prisma",
+    "timestamp": "2025-08-03T15:16:04.543Z"
+  },
+  {
+    "session_id": "2ccaf989-9c00-494e-91e5-3cd5b0925ddf",
+    "blocked_command": "rm /Users/fatih/Development/sequelize-pg-test/db/introspect-config.json",
+    "timestamp": "2025-08-03T15:54:07.421Z"
+  },
+  {
+    "session_id": "bd84366c-db03-478b-9470-ce893de80957",
+    "blocked_command": "rm -rf prisma/migrations/20250804022200_test_change",
+    "timestamp": "2025-08-04T02:22:14.723Z"
+  },
+  {
+    "session_id": "bd84366c-db03-478b-9470-ce893de80957",
+    "blocked_command": "rm db/drizzle-connection.js db/drizzle-queries.ts db/schema.js",
+    "timestamp": "2025-08-04T02:50:53.804Z"
+  },
+  {
+    "session_id": "bd84366c-db03-478b-9470-ce893de80957",
+    "blocked_command": "rm -rf db/migrations drizzle.config.ts",
+    "timestamp": "2025-08-04T02:50:53.995Z"
+  },
+  {
+    "session_id": "bd84366c-db03-478b-9470-ce893de80957",
+    "blocked_command": "rm -rf node_modules/.prisma && npm run db:generate",
+    "timestamp": "2025-08-04T02:56:10.859Z"
+  },
+  {
+    "session_id": "bd84366c-db03-478b-9470-ce893de80957",
+    "blocked_command": "rm -rf DELETE_node_modules_prisma_old",
+    "timestamp": "2025-08-04T03:14:56.058Z"
+  },
+  {
+    "session_id": "ffe489f9-3634-41d6-9ae9-284dc5805403",
+    "blocked_command": "rm /Users/fatih/Development/shopify-apps/inventory-status-2/_e2e/playwright-base.config.js",
+    "timestamp": "2025-08-07T22:05:40.264Z"
+  },
+  {
+    "session_id": "bdcf3408-b5bb-4452-9d67-2a98ff70b2c9",
+    "blocked_command": "rm /Users/fatih/Development/shopify-apps/inventory-status-2/_e2e/demo-teardown.js",
+    "timestamp": "2025-08-07T22:13:44.787Z"
+  },
+  {
+    "session_id": "aabf639b-ada3-412e-a284-25e22721aa1b",
+    "blocked_command": "rmdir /Users/fatih/Development/shopify-apps/inventory-status/data",
+    "timestamp": "2025-08-08T02:03:58.192Z"
+  },
+  {
+    "session_id": "ba0a456a-fec5-4ded-9a77-bb4998c85360",
+    "blocked_command": "rm /Users/fatih/Development/shopify-apps/inventory-status/utils/scenarioProcessor.js",
+    "timestamp": "2025-08-08T03:38:40.141Z"
+  },
+  {
+    "session_id": "6492f154-1799-4e41-b15f-5aaee63b62d6",
+    "blocked_command": "rm .eslintrc.json",
+    "timestamp": "2025-08-09T02:32:45.318Z"
+  },
+  {
+    "session_id": "6492f154-1799-4e41-b15f-5aaee63b62d6",
+    "blocked_command": "rm -rf node_modules package-lock.json",
+    "timestamp": "2025-08-09T02:59:44.172Z"
+  },
+  {
+    "session_id": "931cbc70-3a82-48e9-8e96-5f858782b192",
+    "blocked_command": "rm /Users/fatih/Development/shopify-apps/inventory-status/db/migrations/0001_daffy_mongu.sql",
+    "timestamp": "2025-08-10T14:04:42.735Z"
+  },
+  {
+    "session_id": "64db674d-781b-4048-823b-d3058e19e33c",
+    "blocked_command": "rm /Users/fatih/Development/panelone/debug_test.js",
+    "timestamp": "2025-08-12T21:00:03.714Z"
+  },
+  {
+    "session_id": "64db674d-781b-4048-823b-d3058e19e33c",
+    "blocked_command": "rm /Users/fatih/Development/panelone/core-service/DELETE_debug_spaces_test.js",
+    "timestamp": "2025-08-12T22:05:04.048Z"
+  },
+  {
+    "session_id": "e4ee3b5a-b3f8-477b-8851-3655c0da1541",
+    "blocked_command": "rm -rf /Users/fatih/.nvm/versions/node/v20.18.1/lib/node_modules/@anthropic-ai/claude-code /Users/fatih/.nvm/versions/node/v20.18.1/lib/node_modules/@anthropic-ai/.claude-code-*",
+    "timestamp": "2025-08-14T00:34:15.829Z"
+  },
+  {
+    "session_id": "22064a13-d742-432a-a017-61bcc34ed90e",
+    "blocked_command": "rm -f /Users/fatih/Development/panelone/app/Controllers/Admin/Db.php",
+    "timestamp": "2025-08-14T01:19:19.935Z"
+  }
+]
