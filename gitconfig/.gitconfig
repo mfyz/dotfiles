@@ -27,3 +27,8 @@
 
 [core]
 	excludesfile = /Users/yildizf/.gitignore
+
+[safe]
+	directory = /data/www/shopify-inventory-status
+	directory = /data/containers/mysql
+	directory = /data/run/mfyz-server-scripts

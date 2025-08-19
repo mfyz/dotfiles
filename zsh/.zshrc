@@ -26,7 +26,7 @@ if [[ $HOSTNAME =~ "mfyz-MBP" || $HOSTNAME =~ "felix-air" ]]; then
   export GEM_HOME=$HOME/.gem
   export PATH=$GEM_HOME/bin:$PATH
 fi
-if [[ $HOSTNAME == "remote-workspace" ]]; then
+if [[ $HOSTNAME == "remote-workspace" || $HOSTNAME =~ "mfyz-server" ]]; then
   export ZSH="/home/fatih/.oh-my-zsh"
 fi
 if [[ $HOSTNAME == "mfyzpi" ]]; then
@@ -63,7 +63,7 @@ plugins=(
   zsh-autosuggestions
   colored-man-pages
 )
-if [[ $(hostname) == "remote-workspace" ]] || [[ $(hostname) == "mfyzpi" ]]; then
+if [[ $(hostname) == "remote-workspace" ]] || [[ $(hostname) == "mfyzpi" ]] || [[ $(hostname) == "mfyz-server" ]]; then
   ZSH_TMUX_AUTOSTART=true
   ZSH_TMUX_AUTOQUIT=false
 fi
@@ -97,6 +97,7 @@ export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export TERM="xterm-256color"
 
+# mac
 if [[ $(hostname) =~ "felix-air" || $(hostname) =~ "mfyz-air" || $(hostname) =~ "arc-C00636" ]]; then
   export PATH="/opt/homebrew/bin:$PATH"
   export PATH="/usr/local/lib/node_modules/node/bin:$PATH"
@@ -154,6 +155,7 @@ alias -g wsend='/Users/fatih/.wsend/wsend'
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/mysql/bin:$PATH"
 
+. "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh)"
 
 # Added by Windsurf
@@ -161,3 +163,4 @@ export PATH="/Users/fatih/.codeium/windsurf/bin:$PATH"
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/fatih/.lmstudio/bin"
+
