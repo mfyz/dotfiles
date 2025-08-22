@@ -1,10 +1,6 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # zsh -----------------------------------------------------------------------------------------------------------------
 if [[ "$(uname)" == "Darwin" ]]; then
   if [[ "$(hostname)" == "Mac" ]]; then
@@ -155,8 +151,8 @@ alias -g wsend='/Users/fatih/.wsend/wsend'
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/mysql/bin:$PATH"
 
-. "$HOME/.atuin/bin/env"
-eval "$(atuin init zsh)"
+[[ -f "$HOME/.atuin/bin/env" ]] && . "$HOME/.atuin/bin/env"
+[[ -x "$(command -v atuin)" ]] && eval "$(atuin init zsh)"
 
 # Added by Windsurf
 export PATH="/Users/fatih/.codeium/windsurf/bin:$PATH"

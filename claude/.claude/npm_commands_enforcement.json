@@ -208,5 +208,11 @@
     "blocked_command": "cd .. && ./vendor/bin/phpunit --filter=PrivateCartEmailUnsubscribeFlagTest",
     "suggested_command": "npm test (or check package.json for available test scripts that set up PHP test environment)",
     "timestamp": "2025-08-14T01:09:50.848Z"
+  },
+  {
+    "session_id": "20094c42-4062-4038-af02-b08a1945c56a",
+    "blocked_command": "php vendor/bin/phpunit tests/bugs/PO818StockImportDistributorUpdateTest.php --testdox",
+    "suggested_command": "npm test (or check package.json for available test scripts that set up PHP test environment)",
+    "timestamp": "2025-08-20T02:54:33.830Z"
   }
 ]
