@@ -25,6 +25,9 @@ fi
 if [[ $HOSTNAME == "remote-workspace" || $HOSTNAME =~ "mfyz-server" ]]; then
   export ZSH="/home/fatih/.oh-my-zsh"
 fi
+if [[ $HOSTNAME == "mfyz-remote" ]]; then
+  export ZSH="/home/remote/.oh-my-zsh"
+fi
 if [[ $HOSTNAME == "mfyzpi" ]]; then
   export ZSH="/home/pi/.oh-my-zsh"
 fi
