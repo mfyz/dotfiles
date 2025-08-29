@@ -5,3 +5,5 @@ claude/.claude/plugins/config.json
 claude/.claude/projects
 claude/.claude/statsig
 claude/.claude/todos
+claude/.claude/logs
+claude/.claude/shell-snapshots
