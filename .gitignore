@@ -1,2 +1,7 @@
 .DS_Store
 atuin/.config/atuin/atuin-receipt.json
+claude/.claude/.credentials.json
+claude/.claude/plugins/config.json
+claude/.claude/projects
+claude/.claude/statsig
+claude/.claude/todos

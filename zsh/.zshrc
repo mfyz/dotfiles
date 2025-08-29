@@ -163,3 +163,10 @@ export PATH="/Users/fatih/.codeium/windsurf/bin:$PATH"
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/fatih/.lmstudio/bin"
 
+# Auto-start tmux on SSH connections
+if [[ -n "$SSH_CONNECTION" ]] && [[ -z "$TMUX" ]] && [[ -n "$PS1" ]]; then
+    # Create a new session with timestamp name
+    session_name="ssh-$(date +%Y%m%d-%H%M%S)"
+    tmux new-session -s "$session_name"
+fi
+
