@@ -8,9 +8,9 @@ alias s='sublime'
 alias ll='/bin/ls'
 alias lls='/bin/ls'
 alias la='ls -a'
-if which colorls >/dev/null; then
+if command -v colorls &>/dev/null; then
   alias ls='colorls -lA --sd'
-elif which lsd >/dev/null; then
+elif command -v lsd &>/dev/null; then
   alias ls='lsd -la'
 fi
 if [[ $(hostname) == "mfyzpi" ]]; then
@@ -218,9 +218,18 @@ alias sqj='steampipe query --output json'
 alias sqc='steampipe query --output csv'
 alias create-gitignore='curl -o .gitignore https://raw.githubusercontent.com/github/gitignore/main/Node.gitignore'
 alias shdotenv='export $(grep -v "^#" .env | xargs)'
-alias cdf="cd ~/.dotfiles"
 alias cds="cd ~/.ssh"
 alias cdd="cd ~/Development"
 alias cl="claude"
 alias clp="claude --dangerously-skip-permissions"
 alias clu="rm -rf /Users/fatih/.nvm/versions/node/v20.18.1/lib/node_modules/@anthropic-ai/claude-code && npm i -g @anthropic-ai/claude-code"
+alias dfc="cd ~/.dotfiles"
+alias dfpl="cd ~/.dotfiles && git pull"
+alias dfps="cd ~/.dotfiles && git pull && git add . && git commit -m 'updates' && git push origin"
+
+# Conditional cat alias - use batcat/bat if available, fallback to cat
+if command -v batcat &>/dev/null; then
+  alias cat='batcat'
+elif command -v bat &>/dev/null; then
+  alias cat='bat'
+fi

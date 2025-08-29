@@ -4,7 +4,12 @@
 # Play completion sound
 # afplay /System/Library/Sounds/Glass.aiff
 
-say "[[volm 0.5]] ."
+if command -v say &>/dev/null; then
+    say "[[volm 0.5]] ."
+else
+    # Visual bell
+    printf "\a"
+fi
 
 # Optional: Log the completion
-echo "$(date): Claude task completed" >> ~/.claude/logs/hook.log
+echo "$(date): Claude task completed" >> "$HOME/.claude/logs/hook.log"
