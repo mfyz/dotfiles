@@ -91,6 +91,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#formatter='unique_tail'
 
+set nofoldenable
 
 " File type specific configuration
 au BufRead,BufNewFile Podfile set filetype=ruby
