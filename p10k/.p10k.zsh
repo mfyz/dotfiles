@@ -159,9 +159,11 @@
   if [[ $POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_CHAR != ' ' ]]; then
     # The color of the filler. You'll probably want to match the color of POWERLEVEL9K_MULTILINE
     # ornaments defined above.
-    # Special case: Orange dotted lines for mfyz-remote hostname
+    # Special case: Orange dotted lines for mfyz-remote, Purple for mfyz-server
     if [[ "$(hostname)" == "mfyz-remote" ]]; then
       typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_FOREGROUND=208  # Orange
+    elif [[ "$(hostname)" == "mfyz-server" ]]; then
+      typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_FOREGROUND=93  # Purple
     else
       typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_FOREGROUND=238
     fi
@@ -969,10 +971,13 @@
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=1
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND=0
   # Context color in SSH without privileges.
-  # Special case: Orange background for mfyz-remote hostname
+  # Special case: Orange background for mfyz-remote hostname, Purple for mfyz-server
   if [[ "$(hostname)" == "mfyz-remote" ]]; then
     typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_FOREGROUND=15  # White text
     typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_BACKGROUND=208  # Orange background
+  elif [[ "$(hostname)" == "mfyz-server" ]]; then
+    typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_FOREGROUND=15  # White text
+    typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_BACKGROUND=93  # Purple background
   else
     typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_FOREGROUND=3
     typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_BACKGROUND=0
