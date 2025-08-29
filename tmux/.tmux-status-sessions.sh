@@ -3,16 +3,15 @@
 # Get current session
 current_session=$(tmux display-message -p '#S')
 
-# Function to generate color based on string hash
-get_color_for_name() {
-    local name="$1"
-    # Use a hash of the name to pick a color
-    local hash=$(echo -n "$name" | sum | cut -d' ' -f1)
-    # Pick bright, high-contrast colors
-    # cyan, bright blue, bright magenta, bright green, bright yellow, orange, pink, light purple, lime, sky blue, coral, light green
-    local colors=(51 39 201 46 226 208 213 141 118 87 210 120)
-    local index=$((hash % ${#colors[@]}))
-    echo "${colors[$index]}"
+# Color palette for sessions
+# Debug command to preview colors: for i in 11 216 51 46 202 197 207 39 148 105; do printf "\e[48;5;238m\e[38;5;%sm %3s \e[0m " "$i" "$i"; done; echo
+colors=(11 216 51 46 202 197 207 39 148 105)
+
+# Function to get color by rotating through the palette
+get_color_for_session() {
+    local session_index="$1"
+    local color_index=$((session_index % ${#colors[@]}))
+    echo "${colors[$color_index]}"
 }
 
 # Build session list with windows
@@ -20,22 +19,24 @@ output=""
 first=true
 # Get sessions in the same order as switch-client navigation (alphabetical)
 sessions=($(tmux list-sessions -F '#{session_name}' | sort))
+session_index=0
 for session in "${sessions[@]}"; do
     # Add separator between sessions (not before the first one)
     if [ "$first" = false ]; then
-        output+="#[fg=colour239]|"
+        output+="#[fg=colour248]•"
     fi
     first=false
     
-    # Get color for this session
-    color=$(get_color_for_name "$session")
+    # Get color for this session by rotating through the palette
+    color=$(get_color_for_session "$session_index")
+    session_index=$((session_index + 1))
     
     if [ "$session" = "$current_session" ]; then
-        # Current session with dark gray background
-        output+="#[bg=colour238,fg=colour${color},bold]${session}"
+        # Current session with colored background and true black text
+        output+="#[bg=colour${color},fg=colour16,bold] ${session} "
     else
         # Other sessions with just colored text
-        output+="#[bg=default,fg=colour${color}]${session}"
+        output+="#[bg=default,fg=colour${color}] ${session} "
     fi
     
     # Get windows for this session
@@ -47,7 +48,7 @@ for session in "${sessions[@]}"; do
         # Join window names with commas
         window_list=$(printf "%s," "${windows[@]}" | sed 's/,$//')
         if [ "$session" = "$current_session" ]; then
-            output+="#[bg=colour238,fg=colour240] • #[bg=colour238,fg=colour250]${window_list}"
+            output+="#[bg=colour${color},fg=colour240] • #[bg=colour${color},fg=colour16]${window_list}"
         else
             output+="#[bg=default,fg=colour240] • #[bg=default,fg=colour245]${window_list}"
         fi
