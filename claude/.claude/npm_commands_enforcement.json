@@ -214,5 +214,83 @@
     "blocked_command": "php vendor/bin/phpunit tests/bugs/PO818StockImportDistributorUpdateTest.php --testdox",
     "suggested_command": "npm test (or check package.json for available test scripts that set up PHP test environment)",
     "timestamp": "2025-08-20T02:54:33.830Z"
+  },
+  {
+    "session_id": "9c758500-026d-4d16-9cea-0ec755f65213",
+    "blocked_command": "ls -la jest.config.* cypress.config.* .nycrc* .coveragerc 2>/dev/null || echo \"No test config files found\"",
+    "suggested_command": "npm test (or check package.json for available test scripts)",
+    "timestamp": "2025-08-24T22:34:07.558Z"
+  },
+  {
+    "session_id": "030096c9-3435-4644-961a-629be4328445",
+    "blocked_command": "npm install --save-dev jest@^30.0.3 jest-environment-jsdom@^30.0.2 @types/jest@^30.0.0 babel-jest@^30.0.2 @babel/preset-env@^7.27.2 @babel/preset-react@^7.27.1 @babel/preset-typescript@^7.27.1 @babel/plugin-syntax-import-attributes@^7.27.1 ts-jest@^29.4.0 @testing-library/react@^16.3.0 @testing-library/jest-dom@^6.6.3 @playwright/test@^1.53.1 playwright@^1.53.1 identity-obj-proxy@^3.0.0",
+    "suggested_command": "npm test (or check package.json for available test scripts)",
+    "timestamp": "2025-08-25T01:09:54.393Z"
+  },
+  {
+    "session_id": "030096c9-3435-4644-961a-629be4328445",
+    "blocked_command": "npx jest --version",
+    "suggested_command": "npm test (or check package.json for available test scripts)",
+    "timestamp": "2025-08-25T01:16:44.219Z"
+  },
+  {
+    "session_id": "4e2df702-0bea-40ae-b24b-c245894b7734",
+    "blocked_command": "npx playwright test --reporter=list",
+    "suggested_command": "npm run e2e (or check package.json for available e2e scripts)",
+    "timestamp": "2025-08-25T02:56:22.316Z"
+  },
+  {
+    "session_id": "432a7d41-6a4f-46fd-96c7-ee7533a16f9b",
+    "blocked_command": "npx jest app/api/admin/stats/route.test.ts --no-coverage",
+    "suggested_command": "npm test (or check package.json for available test scripts)",
+    "timestamp": "2025-08-25T07:13:44.271Z"
+  },
+  {
+    "session_id": "6a5d0faa-10ff-434f-9d27-c62b5d5f66e8",
+    "blocked_command": "npx jest lib/usage-limits.test.ts --verbose",
+    "suggested_command": "npm test (or check package.json for available test scripts)",
+    "timestamp": "2025-08-25T23:32:57.818Z"
+  },
+  {
+    "session_id": "a2c08d57-6454-4f55-8dbe-873bccc70ecd",
+    "blocked_command": "npx playwright test --reporter=list",
+    "suggested_command": "npm run e2e (or check package.json for available e2e scripts)",
+    "timestamp": "2025-08-25T23:46:22.048Z"
+  },
+  {
+    "session_id": "2bf283e3-2f8a-401f-9576-da49499bc498",
+    "blocked_command": "npx playwright test --reporter=list",
+    "suggested_command": "npm run e2e (or check package.json for available e2e scripts)",
+    "timestamp": "2025-08-26T01:21:37.020Z"
+  },
+  {
+    "session_id": "220d6be1-59a4-404f-a264-fc3a9952e9b9",
+    "blocked_command": "npx jest app/api/admin/original-chat/route.test.ts --verbose",
+    "suggested_command": "npm test (or check package.json for available test scripts)",
+    "timestamp": "2025-08-26T01:35:52.648Z"
+  },
+  {
+    "session_id": "c684d28d-fa4f-4e56-8212-9dd14c0dfc31",
+    "blocked_command": "npx jest \"app/c/\\[id\\]/page.test.tsx\" --verbose --no-coverage 2>&1 | grep -A 20 -B 5 \"handles chat errors properly\"",
+    "suggested_command": "npm test (or check package.json for available test scripts)",
+    "timestamp": "2025-08-26T01:56:26.964Z"
+  },
+  {
+    "session_id": "e9cdc052-1b3c-43c4-b6d5-cbadd54d44bf",
+    "blocked_command": "npx jest --listTests | head -10",
+    "suggested_command": "npm test (or check package.json for available test scripts)",
+    "timestamp": "2025-08-26T03:33:30.176Z"
+  },
+  {
+    "session_id": "e9cdc052-1b3c-43c4-b6d5-cbadd54d44bf",
+    "blocked_command": "npx jest __tests/app/c/[id]/page.test.tsx --verbose && echo \"EXIT_CODE=0 TESTS_PASSED\" || echo \"EXIT_CODE=$? TESTS_FAILED\"",
+    "suggested_command": "npm test (or check package.json for available test scripts)",
+    "timestamp": "2025-08-26T03:58:43.698Z"
+  },
+  {
+    "session_id": "e5f4952a-6d9d-477b-a9cf-b91395547ca6",
+    "blocked_command": "npx playwright test --list",
+    "suggested_command": "npm run e2e (or check package.json for available e2e scripts)",
+    "timestamp": "2025-08-26T05:22:18.545Z"
   }
 ]

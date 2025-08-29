@@ -183,5 +183,85 @@
     "session_id": "22064a13-d742-432a-a017-61bcc34ed90e",
     "blocked_command": "rm -f /Users/fatih/Development/panelone/app/Controllers/Admin/Db.php",
     "timestamp": "2025-08-14T01:19:19.935Z"
+  },
+  {
+    "session_id": "93731d2e-8f9f-4756-93da-77adad0f3d97",
+    "blocked_command": "rm -rf .next",
+    "timestamp": "2025-08-23T03:58:21.864Z"
+  },
+  {
+    "session_id": "030096c9-3435-4644-961a-629be4328445",
+    "blocked_command": "rm -rf node_modules package-lock.json && npm install --legacy-peer-deps",
+    "timestamp": "2025-08-25T01:17:35.708Z"
+  },
+  {
+    "session_id": "409f52cc-3509-4cda-8a01-2461963e8b2f",
+    "blocked_command": "rm scripts/import-chatgpt-conversation.js scripts/sample-chatgpt-export.txt",
+    "timestamp": "2025-08-25T03:33:35.592Z"
+  },
+  {
+    "session_id": "9afaf158-06ce-4314-b340-86451f2164f3",
+    "blocked_command": "rm /Users/fatih/Development/myketobuddy/scripts/download-chatgpt-html.ts",
+    "timestamp": "2025-08-25T03:55:50.300Z"
+  },
+  {
+    "session_id": "2e492e24-46df-45f6-a500-ae63e9e82433",
+    "blocked_command": "rmdir \"pages/api/vote/__tests__\"",
+    "timestamp": "2025-08-25T04:10:29.779Z"
+  },
+  {
+    "session_id": "44c1d990-108a-45b5-8fc2-d6a54b4707b2",
+    "blocked_command": "rm -rf .next",
+    "timestamp": "2025-08-25T06:08:23.158Z"
+  },
+  {
+    "session_id": "7aeb09f2-c284-4a12-bc7e-1cdeefb4b6dc",
+    "blocked_command": "rm /Users/fatih/Development/featuristik/pages/api/imagekit-auth.test.ts /Users/fatih/Development/featuristik/pages/api/auth/nextauth.test.ts /Users/fatih/Development/featuristik/pages/auth/signin.test.tsx /Users/fatih/Development/featuristik/pages/auth/verify-request.test.tsx",
+    "timestamp": "2025-08-25T06:24:09.241Z"
+  },
+  {
+    "session_id": "f8077e0a-6eae-4699-9320-29bc4fce3c35",
+    "blocked_command": "git rm test-file.js && git commit -m \"Remove test file\"",
+    "timestamp": "2025-08-25T16:06:31.700Z"
+  },
+  {
+    "session_id": "84efb49f-b053-4216-a9ef-984df2af5c84",
+    "blocked_command": "git rm test-prettier.js && git commit --amend -m \"Add Prettier configuration and pre-commit hooks\"",
+    "timestamp": "2025-08-25T16:06:55.872Z"
+  },
+  {
+    "session_id": "d3ec8b09-e46f-4a2d-a4c1-48bb10547671",
+    "blocked_command": "rm /Users/fatih/Development/myketobuddy/app/usage/page.tsx",
+    "timestamp": "2025-08-25T20:43:12.907Z"
+  },
+  {
+    "session_id": "13c1d32a-df55-4747-9532-279d40db4285",
+    "blocked_command": "rm integration-test-models.js",
+    "timestamp": "2025-08-26T03:00:14.620Z"
+  },
+  {
+    "session_id": "e9cdc052-1b3c-43c4-b6d5-cbadd54d44bf",
+    "blocked_command": "mv e2e/* __e2e__/ && rmdir e2e",
+    "timestamp": "2025-08-26T03:34:09.305Z"
+  },
+  {
+    "session_id": "e9cdc052-1b3c-43c4-b6d5-cbadd54d44bf",
+    "blocked_command": "rm -rf DELETE___tests__ DELETE_e2e move_tests.sh fix_imports.sh test_files_list.txt",
+    "timestamp": "2025-08-26T04:00:07.581Z"
+  },
+  {
+    "session_id": "f772bf6e-4833-4b4f-ac7e-f13c778b0b0b",
+    "blocked_command": "rm -rf .next && rm -rf node_modules/.cache && npm run build",
+    "timestamp": "2025-08-26T05:13:45.553Z"
+  },
+  {
+    "session_id": "66cde1f5-1ed3-4385-b618-2d2ef77c3aec",
+    "blocked_command": "rm test_account_linking.php",
+    "timestamp": "2025-08-27T14:49:50.747Z"
+  },
+  {
+    "session_id": "66cde1f5-1ed3-4385-b618-2d2ef77c3aec",
+    "blocked_command": "rm /Users/fatih/Development/panelone/tests/admin/AdminFeatureFlagsPhase1Test.php /Users/fatih/Development/panelone/tests/admin/AdminFeatureFlagsPhase2Test.php",
+    "timestamp": "2025-08-27T15:39:20.165Z"
   }
 ]

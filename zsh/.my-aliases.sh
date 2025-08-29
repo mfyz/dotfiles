@@ -47,7 +47,7 @@ if command -v code-insiders &> /dev/null && ! command -v code &> /dev/null; then
 fi
 #alias c.='if command -v code-insiders &> /dev/null; then code-insiders .; else code .; fi'
 # alias c.='code .'
-alias c.='cursor .'
+alias c.='windsurf .'
 alias ni='npm install'
 alias nr='npm run'
 alias ns='npm start'
@@ -55,6 +55,8 @@ alias nrs='npm start'
 alias nrd='npm run dev'
 alias nrc='npm run clean'
 alias nrt='npm run test'
+alias nrtu='npm run test:unit'
+alias nrte='npm run test:e2e'
 alias y='yarn'
 alias ya='yarn add'
 alias yi='yarn install'
@@ -226,10 +228,41 @@ alias clu="rm -rf /Users/fatih/.nvm/versions/node/v20.18.1/lib/node_modules/@ant
 alias dfc="cd ~/.dotfiles"
 alias dfpl="cd ~/.dotfiles && git pull"
 alias dfps="cd ~/.dotfiles && git pull && git add . && git commit -m 'updates' && git push origin"
+alias mr="ssh mr"
 
-# Conditional cat alias - use batcat/bat if available, fallback to cat
-if command -v batcat &>/dev/null; then
+# Cross-platform cat alias using bat/batcat
+if command -v batcat &> /dev/null; then
   alias cat='batcat'
-elif command -v bat &>/dev/null; then
+elif command -v bat &> /dev/null; then
   alias cat='bat'
 fi
+
+# Clean up files/folders starting with DELETE_
+clean_delete() {
+    # Find files and directories starting with DELETE_ recursively
+    local items=($(find . -name "DELETE_*" 2>/dev/null))
+    
+    if [ ${#items[@]} -eq 0 ]; then
+        echo "No items found starting with DELETE_*"
+        return 0
+    fi
+    
+    echo "Found ${#items[@]} items to delete:"
+    printf '%s\n' "${items[@]}"
+    
+    echo -n "Delete these items? (y/N): "
+    read -r response
+    
+    if [ "$response" = "y" ]; then
+        for item in "${items[@]}"; do
+            if [ -d "$item" ]; then
+                rm -rf "$item" && echo "Deleted directory: $item"
+            elif [ -f "$item" ]; then
+                rm -f "$item" && echo "Deleted file: $item"
+            fi
+        done
+        echo "Cleanup complete!"
+    else
+        echo "Cancelled."
+    fi
+}
