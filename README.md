@@ -3,6 +3,10 @@
 
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/mfyz/dotfiles/master/install.sh)"`
 
+# Pre-requisites:
+
+- install zsh
+- install ohmyzsh
 
 # Other stuff to install
 - Fig - Autocomplete
