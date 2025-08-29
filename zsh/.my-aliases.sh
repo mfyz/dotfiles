@@ -38,6 +38,7 @@ alias ts='tmux new-session -s'
 alias tl='tmux list-sessions'
 alias tks='tmux kill-server'
 alias tkss='tmux kill-session -t'
+alias tcr='tmux source-file ~/.tmux.conf 2>&1 || echo "Tmux not running, config will be loaded on next start"'
 
 alias cdnm='/usr/local/lib/node_modules/'
 alias enable_charles='export http_proxy="http://127.0.0.1:8888";export https_proxy="http://127.0.0.1:8888"'
