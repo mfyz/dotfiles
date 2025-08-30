@@ -239,6 +239,9 @@ elif command -v bat &> /dev/null; then
   alias cat='bat'
 fi
 
+# Alias for original cat command
+alias ccat='/bin/cat'
+
 # Clean up files/folders starting with DELETE_
 clean_delete() {
     # Find files and directories starting with DELETE_ recursively
