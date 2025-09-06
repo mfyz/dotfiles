@@ -167,8 +167,11 @@ export PATH="$PATH:/Users/fatih/.lmstudio/bin"
 
 # Auto-start tmux on SSH connections
 if [[ -n "$SSH_CONNECTION" ]] && [[ -z "$TMUX" ]] && [[ -n "$PS1" ]]; then
-    # Create a new session with timestamp name
-    session_name="ssh-$(date +%Y%m%d-%H%M%S)"
+    # Create a new session with short name: s + digit + random alphanumeric
+    # Generate random digit (0-9) and random alphanumeric (a-z0-9)
+    rand_digit=$((RANDOM % 10))
+    rand_char=$(echo {a..z} {0..9} | tr ' ' '\n' | shuf -n1)
+    session_name="z${rand_digit}${rand_char}"
     tmux new-session -s "$session_name"
 fi
 
