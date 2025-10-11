@@ -246,18 +246,18 @@ alias ccat='/bin/cat'
 clean_delete() {
     # Find files and directories starting with DELETE_ recursively
     local items=($(find . -name "DELETE_*" 2>/dev/null))
-    
+
     if [ ${#items[@]} -eq 0 ]; then
         echo "No items found starting with DELETE_*"
         return 0
     fi
-    
+
     echo "Found ${#items[@]} items to delete:"
     printf '%s\n' "${items[@]}"
-    
+
     echo -n "Delete these items? (y/N): "
     read -r response
-    
+
     if [ "$response" = "y" ]; then
         for item in "${items[@]}"; do
             if [ -d "$item" ]; then
@@ -271,3 +271,48 @@ clean_delete() {
         echo "Cancelled."
     fi
 }
+
+# nginx management
+alias nginx-reload='sudo systemctl reload nginx'
+alias nginx-restart='sudo systemctl restart nginx'
+alias nginx-test='sudo nginx -t'
+alias nginx-status='sudo systemctl status nginx'
+
+# List nginx hosts with configuration details
+nginx_hosts() {
+    echo ""
+    printf "%-6s %s\n" "PORT" "URL"
+    printf "%-6s %s\n" "----" "---"
+    for site in /etc/nginx/sites-enabled/*; do
+        if [ -f "$site" ] && [ ! -L "$site" ] || [ -L "$site" ]; then
+            # Extract server_name (first one only)
+            local domain=$(grep -E "^\s*server_name" "$site" | head -1 | sed 's/^\s*server_name\s*//' | sed 's/;.*//' | awk '{print $1}')
+
+            # Skip if no domain or domain is _
+            if [ -z "$domain" ] || [ "$domain" = "_" ]; then
+                continue
+            fi
+
+            # Extract proxy_pass and extract port from it
+            local proxy=$(grep -E "^\s*proxy_pass" "$site" | head -1 | sed 's/^\s*proxy_pass\s*//' | sed 's/;.*//')
+
+            # Skip if no proxy
+            if [ -z "$proxy" ]; then
+                continue
+            fi
+
+            local port=$(echo "$proxy" | grep -o ':[0-9]*' | sed 's/://')
+
+            # Check if SSL is enabled (listen 443)
+            local has_ssl=$(grep -E "^\s*listen\s+.*443" "$site")
+            local protocol="http"
+            if [ -n "$has_ssl" ]; then
+                protocol="https"
+            fi
+
+            printf "%-6s %s://%s\n" "$port" "$protocol" "$domain"
+        fi
+    done
+}
+
+alias ngs='nginx_hosts'

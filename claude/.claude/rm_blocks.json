@@ -263,5 +263,10 @@
     "session_id": "66cde1f5-1ed3-4385-b618-2d2ef77c3aec",
     "blocked_command": "rm /Users/fatih/Development/panelone/tests/admin/AdminFeatureFlagsPhase1Test.php /Users/fatih/Development/panelone/tests/admin/AdminFeatureFlagsPhase2Test.php",
     "timestamp": "2025-08-27T15:39:20.165Z"
+  },
+  {
+    "session_id": "00dfe708-7ba4-4402-861d-5e543c318ce9",
+    "blocked_command": "rm /home/remote/Development/mfyz.com/public/mermaid-init.js",
+    "timestamp": "2025-09-07T06:16:54.393Z"
   }
 ]
