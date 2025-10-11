@@ -102,7 +102,14 @@ function gbDs(){
 }
 function gbDm(){
   export branch_to_delete=`git rev-parse --abbrev-ref HEAD`
-  git checkout master
+  if git show-ref --verify --quiet refs/heads/master; then
+    git checkout master
+  elif git show-ref --verify --quiet refs/heads/main; then
+    git checkout main
+  else
+    echo "Error: Neither 'master' nor 'main' branch found"
+    return 1
+  fi
   git branch -D $branch_to_delete
 }
 alias gbdd='gbD && gpl'

@@ -268,5 +268,25 @@
     "session_id": "00dfe708-7ba4-4402-861d-5e543c318ce9",
     "blocked_command": "rm /home/remote/Development/mfyz.com/public/mermaid-init.js",
     "timestamp": "2025-09-07T06:16:54.393Z"
+  },
+  {
+    "session_id": "0ddc180f-f17c-4200-a091-f46d92d6ecc1",
+    "blocked_command": "rm /Users/fatih/Development/myketobuddy/components/markdown.tsx",
+    "timestamp": "2025-09-09T03:40:06.840Z"
+  },
+  {
+    "session_id": "18173125-1b4c-4077-baa6-d10558d76197",
+    "blocked_command": "rm scripts/investigate-dropdowns.js scripts/capture-category-modal.js",
+    "timestamp": "2025-09-09T03:49:24.991Z"
+  },
+  {
+    "session_id": "18173125-1b4c-4077-baa6-d10558d76197",
+    "blocked_command": "rm investigate-dropdowns.js",
+    "timestamp": "2025-09-09T03:53:40.486Z"
+  },
+  {
+    "session_id": "39e1135b-4d8e-49f3-8d55-84402fda775f",
+    "blocked_command": "rm /Users/fatih/Development/mfyz.com/src/components/Mermaid.astro /Users/fatih/Development/mfyz.com/src/components/Mermaid.test.js",
+    "timestamp": "2025-09-09T12:19:45.603Z"
   }
 ]
