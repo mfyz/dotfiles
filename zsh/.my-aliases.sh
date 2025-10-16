@@ -1,8 +1,9 @@
 #if [ $TERM_PROGRAM = "iTerm.app" ]; then
   #alias edit='if command -v windsurf &> /dev/null; then windsurf; else code; fi'
 #else
-  alias edit='vim'
+#  alias edit='vim'
 #fi
+alias edit=$EDITOR
 alias e='edit'
 alias s='sublime'
 alias ll='/bin/ls'

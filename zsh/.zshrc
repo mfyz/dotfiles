@@ -1,3 +1,6 @@
+
+export EDITOR="vim"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -13,6 +16,7 @@ else
 fi
 
 if [[ $HOSTNAME =~ "mfyz-MBP" || $HOSTNAME =~ "felix-air" ]]; then
+  export EDITOR="windsurf"
   export PATH=$HOME/bin:/opt/homebrew/bin:/usr/local/bin:$PATH
   export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
   export ZSH="/Users/fatih/.oh-my-zsh"
@@ -35,6 +39,7 @@ if [[ $HOSTNAME == "mfyzw" ]]; then
   export ZSH="/root/.oh-my-zsh"
 fi
 if [[ $HOSTNAME == "arc-C02637" ]]; then
+  export EDITOR="code"
   export ZSH="/Users/yildizm/.oh-my-zsh"
   export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$PATH
   export PATH="/Applications/Docker.app/Contents/Resources/bin:$PATH"
@@ -47,7 +52,6 @@ fi
 
 export PATH="$HOME/.local/bin:$PATH"
 
-export EDITOR="vim"
 
 #ZSH_THEME="gnzh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
