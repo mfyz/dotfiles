@@ -25,6 +25,7 @@ if [[ $HOSTNAME =~ "mfyz-MBP" || $HOSTNAME =~ "felix-air" ]]; then
   fi
   export GEM_HOME=$HOME/.gem
   export PATH=$GEM_HOME/bin:$PATH
+  alias claude="/Users/fatih/.claude/local/claude"
 fi
 if [[ $HOSTNAME == "remote-workspace" || $HOSTNAME =~ "mfyz-server" ]]; then
   export ZSH="/home/fatih/.oh-my-zsh"
@@ -179,4 +180,3 @@ if [[ -n "$SSH_CONNECTION" ]] && [[ -z "$TMUX" ]] && [[ -n "$PS1" ]]; then
     session_name="z${second_char}${third_char}"
     tmux new-session -s "$session_name"
 fi
-
