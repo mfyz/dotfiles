@@ -288,5 +288,15 @@
     "session_id": "39e1135b-4d8e-49f3-8d55-84402fda775f",
     "blocked_command": "rm /Users/fatih/Development/mfyz.com/src/components/Mermaid.astro /Users/fatih/Development/mfyz.com/src/components/Mermaid.test.js",
     "timestamp": "2025-09-09T12:19:45.603Z"
+  },
+  {
+    "session_id": "0ab26c85-0b82-435a-b02f-750d15c3d02e",
+    "blocked_command": "git add .gitignore && git rm claude/.claude/rm_blocks.json",
+    "timestamp": "2025-10-16T13:16:50.648Z"
+  },
+  {
+    "session_id": "0ab26c85-0b82-435a-b02f-750d15c3d02e",
+    "blocked_command": "git add .gitignore && git rm --force claude/.claude/rm_blocks.json",
+    "timestamp": "2025-10-16T13:16:55.456Z"
   }
 ]

@@ -9,3 +9,5 @@ claude/.claude/logs
 claude/.claude/shell-snapshots
 claude/.claude/file-history
 claude/.claude/debug
+claude/.claude/npm_commands_enforcement.json
+claude/.claude/rm_blocks.json
