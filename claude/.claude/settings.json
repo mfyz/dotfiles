@@ -1,13 +1,5 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
-  "mcpServers": {
-    "playwright": {
-        "command": "npx",
-        "args": [
-            "@playwright/mcp@latest"
-        ]
-     }
-  },
   "permissions": {
     "allow": [
       "Bash(gh issue view:*)",
@@ -94,6 +86,15 @@
       }
     ],
     "PostToolUse": []
+  },
+  "alwaysThinkingEnabled": false,
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    }
   },
   "feedbackSurveyState": {
     "lastShownTime": 1754081347012
