@@ -324,3 +324,41 @@ nginx_hosts() {
 }
 
 alias ngs='nginx_hosts'
+
+heatmac() {
+  # Default duration: 30 minutes (override by passing minutes as first argument)
+  local minutes="${1:-30}"
+  local duration=$((minutes * 60))
+  local cpus
+  cpus=$(sysctl -n hw.logicalcpu)
+
+  echo "🔥 Heating your Mac using $cpus cores for $minutes minute(s)..."
+  echo "👉 Press Ctrl+C to stop early."
+
+  # Store PIDs
+  local pids=()
+
+  cleanup_heatmac() {
+    echo
+    echo "🛑 Stopping CPU burners..."
+    for pid in "${pids[@]}"; do
+      kill "$pid" 2>/dev/null || true
+    done
+    trap - INT TERM
+  }
+
+  # Trap Ctrl+C or kill
+  trap cleanup_heatmac INT TERM
+
+  # Launch one 'yes' per core
+  for i in $(seq 1 "$cpus"); do
+    yes > /dev/null &
+    pids+=($!)
+  done
+
+  # Run for the duration
+  sleep "$duration"
+
+  # Cleanup after timeout
+  cleanup_heatmac
+}
