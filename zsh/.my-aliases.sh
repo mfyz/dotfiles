@@ -325,6 +325,9 @@ nginx_hosts() {
 
 alias ngs='nginx_hosts'
 
+
+# # ---------- Heat Mac: CPU Burner to Heat Up Mac ----------
+
 heatmac() {
   # Default duration: 30 minutes (override by passing minutes as first argument)
   local minutes="${1:-30}"
@@ -361,4 +364,108 @@ heatmac() {
 
   # Cleanup after timeout
   cleanup_heatmac
+}
+
+# ---------- Curly: Curl + Page Size and Fusion Metadata Extractor ----------
+
+curly() {
+  if [ -z "$1" ]; then
+    echo "Usage: curly <url>"
+    return 1
+  fi
+
+  URL="$1"
+
+  # Colors
+  CYAN="\033[36m"
+  GREEN="\033[32m"
+  YELLOW="\033[33;1m"
+  MAGENTA="\033[35m"
+  RESET="\033[0m"
+
+  COLW=22
+
+  # Human readable bytes
+  human() {
+    awk -v bytes="$1" '
+      BEGIN {
+        split("B KB MB GB TB", u);
+        for (i=5; bytes < 1024^(i-1); i--);
+        printf("%.2f %s", bytes/1024^(i-1), u[i]);
+      }'
+  }
+
+  # gzip only
+  HDR=(-H "Accept-Encoding: gzip")
+
+  # First curl to get headers
+  RESPONSE=$(curl -s -D - -o /dev/null \
+    "${HDR[@]}" \
+    -w "%{http_code} %{time_starttransfer} %{size_download}" \
+    "$URL")
+
+  STATUS=$(echo "$RESPONSE" | tail -n1 | awk '{print $1}')
+  TTFB=$(echo "$RESPONSE" | tail -n1 | awk '{print $2}')
+  COMPRESSED=$(echo "$RESPONSE" | tail -n1 | awk '{print $3}')
+  HEADERS=$(echo "$RESPONSE" | sed '$d')
+
+  # Arc headers
+  ARC_HEADERS=()
+  for H in x-arc-pb-mx-id x-arc-pb-request-id x-arc-pb-edge; do
+    VAL=$(echo "$HEADERS" | grep -i "^$H:" | cut -d':' -f2- | sed 's/^ //')
+    [ -n "$VAL" ] && ARC_HEADERS+=("$H: $VAL")
+  done
+
+  # Download full HTML (decompressed)
+  HTML=$(curl -s --compressed "${HDR[@]}" "$URL")
+  UNCOMPRESSED=$(printf "%s" "$HTML" | wc -c | tr -d " ")
+
+  # --- PERL NON-GREEDY FUSION EXTRACTOR ---
+  FUSION_CONTENT=$(printf "%s" "$HTML" \
+    | perl -0777 -ne 'print $1 if /<script[^>]*id="fusion-metadata"[^>]*>(.*?)<\/script>/s')
+
+  # Calculate Fusion size
+  if [ -n "$FUSION_CONTENT" ]; then
+    FUSION_SIZE=$(printf "%s" "$FUSION_CONTENT" | wc -c | tr -d " ")
+
+    if [ "$FUSION_SIZE" -gt 0 ] && [ "$UNCOMPRESSED" -gt 0 ]; then
+      PCT=$(awk -v a="$FUSION_SIZE" -v b="$UNCOMPRESSED" 'BEGIN { printf("%.2f", (a/b)*100) }')
+    else
+      PCT="0.00"
+    fi
+
+    FUSION_HUMAN=$(human "$FUSION_SIZE")
+
+    FUSION_ROW=$(printf "%b" "$(printf "%-${COLW}s | %s%s%s (%s%s%%%s)" \
+      "Fusion Metadata" "$GREEN" "$FUSION_HUMAN" "$RESET" \
+      "$MAGENTA" "$PCT" "$RESET")")
+  else
+    FUSION_ROW=$(printf "%b" "$(printf "%-${COLW}s | %sNot found%s" \
+      "Fusion Metadata" "$MAGENTA" "$RESET")")
+  fi
+
+  # --- OUTPUT ---
+  printf "%b\n" "${CYAN}URL:${RESET} $URL"
+  printf "%b\n" "----------------------+-----------------------------"
+
+  printf "%b\n" "$(printf "%-${COLW}s | %s" "Status" "$STATUS")"
+  printf "%b\n" "$(printf "%-${COLW}s | %s%.4f%s s" "TTFB" "$GREEN" "$TTFB" "$RESET")"
+
+  printf "%b\n" "$(printf "%-${COLW}s | %s%s%s" "Compressed" \
+    "$GREEN" "$(human "$COMPRESSED")" "$RESET")"
+
+  printf "%b\n" "$(printf "%-${COLW}s | %s%s%s" "Uncompressed" \
+    "$GREEN" "$(human "$UNCOMPRESSED")" "$RESET")"
+
+  printf "%b\n" "$FUSION_ROW"
+
+  # Arc headers (if present)
+  for AH in "${ARC_HEADERS[@]}"; do
+    KEY=$(echo "$AH" | cut -d':' -f1)
+    VAL=$(echo "$AH" | sed 's/^[^:]*: *//')
+    printf "%b\n" "$(printf "%-${COLW}s | %s%s%s" "$KEY" "$YELLOW" "$VAL" "$RESET")"
+  done
+
+  printf "%b\n" "----------------------+-----------------------------"
+  printf "%b\n" ""
 }
