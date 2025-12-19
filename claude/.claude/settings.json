@@ -87,7 +87,6 @@
     ],
     "PostToolUse": []
   },
-  "alwaysThinkingEnabled": false,
   "mcpServers": {
     "playwright": {
       "command": "npx",

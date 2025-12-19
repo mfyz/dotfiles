@@ -50,7 +50,7 @@ if command -v code-insiders &> /dev/null && ! command -v code &> /dev/null; then
 fi
 #alias c.='if command -v code-insiders &> /dev/null; then code-insiders .; else code .; fi'
 # alias c.='code .'
-alias c.='windsurf .'
+alias c.='cursor .'
 alias ni='npm install'
 alias nr='npm run'
 alias ns='npm start'
@@ -239,6 +239,7 @@ alias dfc="cd ~/.dotfiles"
 alias dfpl="cd ~/.dotfiles && git pull"
 alias dfps="cd ~/.dotfiles && git pull && git add . && git commit -m 'updates' && git push origin"
 alias mr="ssh mr"
+alias killport='port=8084; procs=$(sudo lsof -ti:$port); [ -n "$procs" ] && (echo "Found $(echo $procs | wc -w) process(es) on port $port: $procs" && sudo kill -9 $procs && echo "✓ Killed successfully") || echo "No processes found on port $port"'
 
 # Cross-platform cat alias using bat/batcat
 if command -v batcat &> /dev/null; then
