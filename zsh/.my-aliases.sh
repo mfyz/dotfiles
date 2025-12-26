@@ -240,6 +240,8 @@ alias dfpl="cd ~/.dotfiles && git pull"
 alias dfps="cd ~/.dotfiles && git pull && git add . && git commit -m 'updates' && git push origin"
 alias mr="ssh mr"
 alias killport='port=8084; procs=$(sudo lsof -ti:$port); [ -n "$procs" ] && (echo "Found $(echo $procs | wc -w) process(es) on port $port: $procs" && sudo kill -9 $procs && echo "✓ Killed successfully") || echo "No processes found on port $port"'
+# Get atlassian token from ACLI config (macOS)
+alias get_acli_token='security find-generic-password -s "acli" -w | sed "s/go-keyring-base64://" | base64 -d | gunzip | jq -r ".access_token"'
 
 # Cross-platform cat alias using bat/batcat
 if command -v batcat &> /dev/null; then
