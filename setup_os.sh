@@ -72,11 +72,62 @@ install() {
 # Package installations
 install btop
 install bat
-install lazydocker
-install lazygit
 install fd fd-find  # Different package name on Linux
 install ripgrep
 install tmux
+
+# lazygit (custom install - not in apt)
+echo "------------------------------"
+if command -v lazygit > /dev/null 2>&1; then
+    echo "lazygit: already installed"
+else
+    echo "Installing lazygit..."
+    OS="$(uname -s)"
+    case "$OS" in
+        Darwin)
+            brew install lazygit
+            ;;
+        Linux)
+            LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": *"v\K[^"]*')
+            curl -Lo /tmp/lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/v${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+            tar xf /tmp/lazygit.tar.gz -C /tmp lazygit
+            sudo install /tmp/lazygit -D -t /usr/local/bin/
+            rm -f /tmp/lazygit.tar.gz /tmp/lazygit
+            ;;
+    esac
+    echo "lazygit: installed successfully"
+fi
+
+# lazydocker (custom install - not in apt)
+echo "------------------------------"
+if command -v lazydocker > /dev/null 2>&1; then
+    echo "lazydocker: already installed"
+else
+    echo "Installing lazydocker..."
+    OS="$(uname -s)"
+    case "$OS" in
+        Darwin)
+            brew install lazydocker
+            ;;
+        Linux)
+            curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+            ;;
+    esac
+    echo "lazydocker: installed successfully"
+fi
+
+install neovim
+
+# LazyVim (neovim config)
+echo "------------------------------"
+if [ -d "$HOME/.config/nvim" ]; then
+    echo "LazyVim: already installed"
+else
+    echo "Installing LazyVim..."
+    git clone https://github.com/LazyVim/starter ~/.config/nvim
+    rm -rf ~/.config/nvim/.git
+    echo "LazyVim: installed successfully"
+fi
 
 # Tmux plugins (manual install)
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
