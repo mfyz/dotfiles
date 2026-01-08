@@ -116,7 +116,25 @@ else
     echo "lazydocker: installed successfully"
 fi
 
-install neovim
+# neovim (use PPA for latest version on Linux)
+echo "------------------------------"
+if command -v nvim > /dev/null 2>&1; then
+    echo "neovim: already installed ($(nvim --version | head -1))"
+else
+    echo "Installing neovim..."
+    OS="$(uname -s)"
+    case "$OS" in
+        Darwin)
+            brew install neovim
+            ;;
+        Linux)
+            sudo add-apt-repository -y ppa:neovim-ppa/unstable
+            sudo apt-get update
+            sudo apt-get install -y neovim
+            ;;
+    esac
+    echo "neovim: installed successfully"
+fi
 
 # LazyVim (neovim config)
 echo "------------------------------"
