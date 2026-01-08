@@ -13,9 +13,10 @@ install() {
         return 1
     fi
 
-    # Detect OS
-    case "$OSTYPE" in
-        darwin*)
+    # Detect OS using uname (POSIX-compliant)
+    OS="$(uname -s)"
+    case "$OS" in
+        Darwin)
             # macOS - use Homebrew
             if ! command -v brew > /dev/null 2>&1; then
                 echo "Error: Homebrew is not installed"
@@ -38,7 +39,7 @@ install() {
             fi
             ;;
 
-        linux-gnu*)
+        Linux)
             # Linux - use apt
             if ! command -v apt > /dev/null 2>&1; then
                 echo "Error: apt is not available"
@@ -62,7 +63,7 @@ install() {
             ;;
 
         *)
-            echo "Error: Unsupported OS type: $OSTYPE"
+            echo "Error: Unsupported OS type: $OS"
             return 1
             ;;
     esac
