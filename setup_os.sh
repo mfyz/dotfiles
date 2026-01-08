@@ -76,3 +76,21 @@ install lazydocker
 install lazygit
 install fd fd-find  # Different package name on Linux
 install ripgrep
+install tmux
+
+# Tmux plugins (manual install)
+if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+    echo "------------------------------"
+    echo "Installing Tmux Plugin Manager (TPM)..."
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    echo "TPM: installed successfully"
+else
+    echo "------------------------------"
+    echo "TPM: already installed"
+fi
+
+# Install tmux plugins via TPM
+if [ -f "$HOME/.tmux/plugins/tpm/bin/install_plugins" ]; then
+    echo "Installing tmux plugins..."
+    ~/.tmux/plugins/tpm/bin/install_plugins
+fi
