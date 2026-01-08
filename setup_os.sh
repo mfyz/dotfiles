@@ -163,3 +163,24 @@ if [ -f "$HOME/.tmux/plugins/tpm/bin/install_plugins" ]; then
     echo "Installing tmux plugins..."
     ~/.tmux/plugins/tpm/bin/install_plugins
 fi
+
+# uv (Python package installer from Astral)
+echo "------------------------------"
+if command -v uv > /dev/null 2>&1; then
+    echo "uv: already installed"
+else
+    echo "Installing uv..."
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    source $HOME/.local/bin/env
+    echo "uv: installed successfully"
+fi
+
+# sqlit (SQLite tool via uv)
+echo "------------------------------"
+if command -v sqlit > /dev/null 2>&1; then
+    echo "sqlit: already installed"
+else
+    echo "Installing sqlit..."
+    uv tool install sqlit-tui
+    echo "sqlit: installed successfully"
+fi

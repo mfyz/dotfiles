@@ -11,3 +11,5 @@ claude/.claude/file-history
 claude/.claude/debug
 claude/.claude/npm_commands_enforcement.json
 claude/.claude/rm_blocks.json
+claude/.claude/history.jsonl
+claude/.claude/plugins/known_marketplaces.json
