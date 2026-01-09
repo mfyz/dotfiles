@@ -181,6 +181,13 @@ if command -v sqlit > /dev/null 2>&1; then
     echo "sqlit: already installed"
 else
     echo "Installing sqlit..."
-    uv tool install sqlit-tui
+    uv tool uninstall sqlit-tui 2>/dev/null || true
+    uv tool install 'sqlit-tui[ssh]' \
+        --with psycopg2-binary \
+        --with PyMySQL \
+        --with duckdb \
+        --with clickhouse-connect \
+        --with libsql \
+        --with requests
     echo "sqlit: installed successfully"
 fi
