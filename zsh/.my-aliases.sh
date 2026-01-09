@@ -238,7 +238,7 @@ alias clp="claude --dangerously-skip-permissions"
 alias clu="rm -rf /Users/fatih/.nvm/versions/node/v20.18.1/lib/node_modules/@anthropic-ai/claude-code && npm i -g @anthropic-ai/claude-code"
 alias dfc="cd ~/.dotfiles"
 alias dfpl="cd ~/.dotfiles && git pull"
-alias dfps="cd ~/.dotfiles && git pull && git add . && git commit -m 'updates' && git push origin"
+alias dfps='cd ~/.dotfiles && git pull && git add . && git commit -m "$(if command -v claude &>/dev/null; then git diff --cached | claude -p "Write a git commit message for this diff. Max 80 chars, 1-2 sentences. Output only the message." 2>/dev/null || echo "updates"; else echo "updates"; fi)" && git push origin'
 alias mr="ssh mr"
 alias mk="ssh mk"
 alias killport='port=8084; procs=$(sudo lsof -ti:$port); [ -n "$procs" ] && (echo "Found $(echo $procs | wc -w) process(es) on port $port: $procs" && sudo kill -9 $procs && echo "✓ Killed successfully") || echo "No processes found on port $port"'
