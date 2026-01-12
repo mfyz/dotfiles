@@ -5,7 +5,10 @@ export EDITOR="nvim"
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 # zsh -----------------------------------------------------------------------------------------------------------------
-if [[ "$(uname)" == "Darwin" ]]; then
+# Detect Termux by path existence (hostname returns "localhost" in emulator)
+if [[ -d "/data/data/com.termux/files/home" ]]; then
+  HOSTNAME="termux"
+elif [[ "$(uname)" == "Darwin" ]]; then
   if [[ "$(hostname)" == "Mac" ]]; then
     HOSTNAME=$(networksetup -getcomputername)
   else
@@ -38,6 +41,10 @@ if [[ $HOSTNAME == "mfyzpi" ]]; then
 fi
 if [[ $HOSTNAME == "mfyzw" ]]; then
   export ZSH="/root/.oh-my-zsh"
+fi
+if [[ $HOSTNAME == "termux" ]]; then
+  export HOME="/data/data/com.termux/files/home"
+  export ZSH="$HOME/.oh-my-zsh"
 fi
 if [[ $HOSTNAME == "arc-C02637" ]]; then
   export EDITOR="code"
@@ -170,8 +177,8 @@ export PATH="/Users/fatih/.codeium/windsurf/bin:$PATH"
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/fatih/.lmstudio/bin"
 
-# Auto-start tmux on SSH connections
-if [[ -n "$SSH_CONNECTION" ]] && [[ -z "$TMUX" ]] && [[ -n "$PS1" ]]; then
+# Auto-start tmux on SSH connections or Termux
+if { [[ -n "$SSH_CONNECTION" ]] || [[ $HOSTNAME == "termux" ]]; } && [[ -z "$TMUX" ]] && [[ -n "$PS1" ]]; then
     # Create a new session with short name: z + (digit or uppercase) + (lowercase or digit)
     # Second char: digit (0-9) or uppercase letter (A-Z)
     second_char=$(echo {0..9} {A..Z} | tr ' ' '\n' | shuf -n1)
