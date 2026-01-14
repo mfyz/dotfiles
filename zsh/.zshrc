@@ -177,8 +177,8 @@ export PATH="/Users/fatih/.codeium/windsurf/bin:$PATH"
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/fatih/.lmstudio/bin"
 
-# Auto-start tmux on SSH connections or Termux
-if { [[ -n "$SSH_CONNECTION" ]] || [[ $HOSTNAME == "termux" ]]; } && [[ -z "$TMUX" ]] && [[ -n "$PS1" ]]; then
+# Auto-start tmux on SSH connections only (disabled for Termux direct access)
+if [[ -n "$SSH_CONNECTION" ]] && [[ -z "$TMUX" ]] && [[ -n "$PS1" ]]; then
     # Create a new session with short name: z + (digit or uppercase) + (lowercase or digit)
     # Second char: digit (0-9) or uppercase letter (A-Z)
     second_char=$(echo {0..9} {A..Z} | tr ' ' '\n' | shuf -n1)
