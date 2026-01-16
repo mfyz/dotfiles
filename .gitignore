@@ -14,3 +14,5 @@ claude/.claude/rm_blocks.json
 claude/.claude/history.jsonl
 claude/.claude/plugins/known_marketplaces.json
 claude/.claude/paste-cache
+claude/.claude/plugins/install-counts-cache.json
+claude/.claude/stats-cache.json
