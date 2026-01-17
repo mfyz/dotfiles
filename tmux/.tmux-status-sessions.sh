@@ -35,8 +35,8 @@ get_session_data() {
     fi
     
     # Cache is stale or doesn't exist, refresh it
-    # Get sessions in the same order as switch-client navigation (alphabetical)
-    local sessions=($(tmux list-sessions -F '#{session_name}' | sort))
+    # Get sessions sorted by creation time (oldest first, new sessions appear on the right)
+    local sessions=($(tmux list-sessions -F '#{session_created}:#{session_name}' | sort -n | cut -d: -f2))
     local session_data=""
     
     for session in "${sessions[@]}"; do

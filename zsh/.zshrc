@@ -182,11 +182,6 @@ export PATH="$PATH:/Users/fatih/.lmstudio/bin"
 
 # Auto-start tmux on SSH connections only (disabled for Termux direct access)
 if [[ -n "$SSH_CONNECTION" ]] && [[ -z "$TMUX" ]] && [[ -n "$PS1" ]]; then
-    # Create a new session with short name: z + (digit or uppercase) + (lowercase or digit)
-    # Second char: digit (0-9) or uppercase letter (A-Z)
-    second_char=$(echo {0..9} {A..Z} | tr ' ' '\n' | shuf -n1)
-    # Third char: lowercase letter (a-z) or digit (0-9)
-    third_char=$(echo {a..z} {0..9} | tr ' ' '\n' | shuf -n1)
-    session_name="z${second_char}${third_char}"
+    session_name=$(~/.tmux-gen-session-name.sh)
     tmux new-session -s "$session_name"
 fi
